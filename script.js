@@ -18,6 +18,7 @@
   // State Management
   let currentScene = 1;
   let isDoorOpen = false;
+  let isKnocking = false;
   let isCandleBlown = false;
   let isGiftOpened = false;
   let typewriterInterval = null;
@@ -444,7 +445,8 @@
     }
 
     function handleKnock() {
-      if (isDoorOpen) return;
+      if (isKnocking || isDoorOpen) return;
+      isKnocking = true;
       playKnockSound();
 
       // Animate knocker and rattle door
@@ -463,6 +465,7 @@
         // Transition to Scene 2 after character peek reveal
         setTimeout(() => {
           goToScene(2);
+          isKnocking = false;
         }, 1500);
       }, 900);
     }
@@ -533,9 +536,11 @@
 
     // Replay dance button
     btnReplayDance.addEventListener("click", () => {
-      danceWrapper.classList.remove("anim-dance");
+      const activeBtn = document.querySelector(".btn-dance-move.active");
+      const move = activeBtn ? activeBtn.getAttribute("data-move") : "thumka";
+      danceWrapper.classList.remove("anim-dance", "anim-thumka", "anim-moonwalk", "anim-disco", "anim-crazy");
       void danceWrapper.offsetWidth; // Force CSS reflow
-      danceWrapper.classList.add("anim-dance");
+      danceWrapper.classList.add(`anim-${move}`);
       playChimeSound();
       triggerConfettiBurst(window.innerWidth / 2, window.innerHeight * 0.45, 45);
 
@@ -719,7 +724,7 @@
       // Handle graceful image error fallback (never show broken icons)
       const img = card.querySelector(".memory-img");
       img.addEventListener("error", function () {
-        // Fallback to one of the built-in illustrated vector cards
+        this.onerror = null;
         this.src = "assets/photos/deepika-01.svg";
       });
 
@@ -957,11 +962,32 @@
       // 1. Reset door
       const doorWrapper = document.getElementById("door-wrapper");
       if (doorWrapper) {
-        doorWrapper.classList.remove("door-open", "knocking");
+        doorWrapper.classList.remove("door-open", "knocking", "door-shaking");
       }
       isDoorOpen = false;
+      isKnocking = false;
 
-      // 2. Reset candles
+      // 2. Reset dance
+      const danceWrapper = document.getElementById("s3-dance-character-wrapper");
+      if (danceWrapper) {
+        danceWrapper.classList.remove("anim-dance", "anim-thumka", "anim-moonwalk", "anim-disco", "anim-crazy");
+        danceWrapper.classList.add("anim-dance", "anim-thumka");
+      }
+      const danceMoveBtns = document.querySelectorAll(".btn-dance-move");
+      danceMoveBtns.forEach((b, idx) => {
+        if (idx === 0) b.classList.add("active");
+        else b.classList.remove("active");
+      });
+
+      // 3. Reset tabs and close modal if open
+      const photoModal = document.getElementById("photo-modal");
+      if (photoModal && typeof photoModal.close === "function" && photoModal.open) {
+        photoModal.close();
+      }
+      const memTab = document.getElementById("tab-btn-memories");
+      if (memTab) memTab.click();
+
+      // 4. Reset candles
       const flames = document.querySelectorAll(".flame");
       const smokes = document.querySelectorAll(".smoke");
       const btnBlow = document.getElementById("btn-blow-candles");
@@ -974,7 +1000,7 @@
       if (btnToLetter) btnToLetter.hidden = true;
       isCandleBlown = false;
 
-      // 3. Reset gift
+      // 5. Reset gift
       const giftWrapper = document.getElementById("mystery-gift-wrapper");
       const giftSurpriseCard = document.getElementById("gift-surprise-card");
       const giftInstruction = document.getElementById("gift-instruction");
@@ -983,13 +1009,14 @@
       if (giftInstruction) giftInstruction.textContent = "Tap the gift box to unwrap your special surprise! 🎁";
       isGiftOpened = false;
 
-      // 4. Reset letter
+      // 6. Reset letter
       if (typewriterInterval) clearTimeout(typewriterInterval);
       letterPresenterStage.style.display = "flex";
       letterParchmentWrapper.hidden = true;
       typewriterTarget.innerHTML = "";
+      if (btnSkipTypewriter) btnSkipTypewriter.style.display = "inline-block";
 
-      // 5. Navigate back to Scene 1
+      // 7. Navigate back to Scene 1
       playChimeSound();
       goToScene(1);
     });
