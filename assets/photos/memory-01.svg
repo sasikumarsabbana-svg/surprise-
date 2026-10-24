@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="memGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3D1226"/>
+      <stop offset="50%" stop-color="#6B1940"/>
+      <stop offset="100%" stop-color="#2D0D1D"/>
+    </linearGradient>
+    <radialGradient id="memGlow1" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#F5D061" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#3D1226" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="450" rx="16" fill="url(#memGrad1)"/>
+  <circle cx="300" cy="190" r="170" fill="url(#memGlow1)"/>
+  <rect x="25" y="25" width="550" height="400" rx="12" fill="none" stroke="#F3B7D0" stroke-width="2" stroke-dasharray="6 4" opacity="0.5"/>
+
+  <!-- Adventure / Camera / Star Art -->
+  <circle cx="300" cy="175" r="75" fill="#240A18" stroke="#F3B7D0" stroke-width="3"/>
+  
+  <!-- Camera Icon -->
+  <rect x="265" y="150" width="70" height="50" rx="10" fill="#781D48" stroke="#FFF1E8" stroke-width="3"/>
+  <circle cx="300" cy="175" r="16" fill="#351126" stroke="#F5D061" stroke-width="3"/>
+  <circle cx="304" cy="172" r="4" fill="#FFF1E8"/>
+  <rect x="282" y="142" width="20" height="9" rx="3" fill="#FFF1E8"/>
+  <circle cx="323" cy="158" r="4" fill="#F5D061"/>
+
+  <!-- Sparkles & Hearts -->
+  <path d="M210 160 C205 153 195 157 195 163 C195 171 210 181 210 181 C210 181 225 171 225 163 C225 157 215 153 210 160 Z" fill="#F5D061"/>
+  <path d="M390 160 C385 153 375 157 375 163 C375 171 390 181 390 181 C390 181 405 171 405 163 C405 157 395 153 390 160 Z" fill="#F5D061"/>
+
+  <text x="300" y="305" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="bold" fill="#FFF1E8" text-anchor="middle" letter-spacing="1">
+    Special Little Adventures
+  </text>
+  <text x="300" y="335" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" fill="#F3B7D0" text-anchor="middle">
+    Photo Placeholder • Add a photo from your fun trips or dates!
+  </text>
+  <rect x="200" y="360" width="200" height="30" rx="15" fill="#351126" stroke="#F3B7D0" stroke-width="1.5"/>
+  <text x="300" y="380" font-family="sans-serif" font-size="12" font-weight="bold" fill="#F5D061" text-anchor="middle">
+    📸 assets/photos/memory-01.jpg
+  </text>
+</svg>

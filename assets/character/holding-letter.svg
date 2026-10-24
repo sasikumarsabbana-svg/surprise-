@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F3B7D0" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#351126" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FBD6B7"/>
+      <stop offset="100%" stop-color="#F3BD92"/>
+    </linearGradient>
+    <linearGradient id="jacket" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#781D48"/>
+      <stop offset="100%" stop-color="#4F0E2D"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D1C1E"/>
+      <stop offset="100%" stop-color="#15090B"/>
+    </linearGradient>
+    <linearGradient id="envelope" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8F0"/>
+      <stop offset="100%" stop-color="#F3DDD4"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="150" cy="200" r="140" fill="url(#glow)"/>
+  <ellipse cx="150" cy="380" rx="75" ry="14" fill="#1B0713" opacity="0.6"/>
+
+  <!-- Floating Hearts around letter -->
+  <g fill="#F3B7D0" opacity="0.8">
+    <path d="M50 180 A6 6 0 0,0 40 186 A6 6 0 0,0 50 196 A6 6 0 0,0 60 186 A6 6 0 0,0 50 180 Z" transform="rotate(-15 50 180)"/>
+    <path d="M250 170 A7 7 0 0,0 238 177 A7 7 0 0,0 250 189 A7 7 0 0,0 262 177 A7 7 0 0,0 250 170 Z" transform="rotate(15 250 170)"/>
+  </g>
+
+  <!-- Character Group: Holding Letter -->
+  <g id="character-letter">
+    <!-- Legs -->
+    <rect x="118" y="270" width="26" height="85" rx="12" fill="#201124"/>
+    <rect x="156" y="270" width="26" height="85" rx="12" fill="#201124"/>
+    <ellipse cx="128" cy="360" rx="20" ry="10" fill="#FFF1E8"/>
+    <ellipse cx="172" cy="360" rx="20" ry="10" fill="#FFF1E8"/>
+
+    <!-- Torso -->
+    <path d="M100 170 Q150 155 200 170 L210 280 Q150 290 90 280 Z" fill="url(#jacket)"/>
+    <path d="M130 165 L150 230 L170 165 Z" fill="#FFF1E8"/>
+
+    <!-- Neck & Head tilted gently with warmth -->
+    <rect x="138" y="140" width="24" height="30" rx="6" fill="url(#skin)"/>
+    <g transform="rotate(3 150 115)">
+      <ellipse cx="150" cy="115" rx="48" ry="52" fill="url(#skin)"/>
+      <ellipse cx="100" cy="118" rx="10" ry="14" fill="url(#skin)"/>
+      <ellipse cx="200" cy="118" rx="10" ry="14" fill="url(#skin)"/>
+
+      <!-- Hair -->
+      <path d="M96 110 C96 60 140 45 150 45 C180 45 205 65 204 110 C194 95 185 90 170 92 C150 85 130 92 115 88 C105 92 100 100 96 110 Z" fill="url(#hair)"/>
+      <path d="M145 48 Q155 30 175 35 Q160 48 150 50 Z" fill="url(#hair)"/>
+
+      <!-- Glasses -->
+      <rect x="114" y="102" width="30" height="24" rx="7" fill="none" stroke="#221124" stroke-width="4"/>
+      <rect x="156" y="102" width="30" height="24" rx="7" fill="none" stroke="#221124" stroke-width="4"/>
+      <line x1="144" y1="112" x2="156" y2="112" stroke="#221124" stroke-width="4"/>
+
+      <!-- Gentle Loving Eyes -->
+      <ellipse cx="129" cy="114" rx="5" ry="6" fill="#1C0912"/>
+      <ellipse cx="171" cy="114" rx="5" ry="6" fill="#1C0912"/>
+      <circle cx="131" cy="111" r="2.5" fill="#FFFFFF"/>
+      <circle cx="173" cy="111" r="2.5" fill="#FFFFFF"/>
+
+      <!-- Blushing Cheeks -->
+      <circle cx="118" cy="128" r="9" fill="#F3B7D0" opacity="0.75"/>
+      <circle cx="182" cy="128" r="9" fill="#F3B7D0" opacity="0.75"/>
+
+      <!-- Tender Smile -->
+      <path d="M136 133 Q150 146 164 133" fill="none" stroke="#681534" stroke-width="3.5" stroke-linecap="round"/>
+
+      <!-- Eyebrows -->
+      <path d="M120 95 Q130 90 140 96" fill="none" stroke="#1C0912" stroke-width="3" stroke-linecap="round"/>
+      <path d="M160 96 Q170 90 180 95" fill="none" stroke="#1C0912" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <!-- Arms holding envelope -->
+    <path d="M98 185 Q95 240 120 250" fill="none" stroke="url(#jacket)" stroke-width="20" stroke-linecap="round"/>
+    <path d="M202 185 Q205 240 180 250" fill="none" stroke="url(#jacket)" stroke-width="20" stroke-linecap="round"/>
+
+    <!-- Romantic Envelope -->
+    <g transform="translate(100, 205)">
+      <!-- Envelope base -->
+      <rect x="0" y="10" width="100" height="70" rx="8" fill="url(#envelope)" stroke="#C88E9E" stroke-width="2.5"/>
+      <!-- Inner fold lines -->
+      <line x1="0" y1="10" x2="50" y2="50" stroke="#C88E9E" stroke-width="2"/>
+      <line x1="100" y1="10" x2="50" y2="50" stroke="#C88E9E" stroke-width="2"/>
+      <line x1="0" y1="80" x2="40" y2="45" stroke="#DAB2BE" stroke-width="1.5"/>
+      <line x1="100" y1="80" x2="60" y2="45" stroke="#DAB2BE" stroke-width="1.5"/>
+      
+      <!-- Red Wax Heart Seal -->
+      <circle cx="50" cy="50" r="14" fill="#A41E3A" stroke="#781D48" stroke-width="1.5"/>
+      <!-- Little golden heart on wax -->
+      <path d="M50 45 C47 42 43 44 43 47 C43 51 50 55 50 55 C50 55 57 51 57 47 C57 44 53 42 50 45 Z" fill="#F5D061"/>
+    </g>
+
+    <!-- Hands holding edges of envelope -->
+    <circle cx="106" cy="242" r="11" fill="url(#skin)"/>
+    <circle cx="194" cy="242" r="11" fill="url(#skin)"/>
+  </g>
+</svg>

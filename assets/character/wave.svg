@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F3B7D0" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#351126" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FBD6B7"/>
+      <stop offset="100%" stop-color="#F3BD92"/>
+    </linearGradient>
+    <linearGradient id="jacket" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#781D48"/>
+      <stop offset="100%" stop-color="#4F0E2D"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D1C1E"/>
+      <stop offset="100%" stop-color="#15090B"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="150" cy="200" r="140" fill="url(#glow)"/>
+  <ellipse cx="150" cy="380" rx="75" ry="14" fill="#1B0713" opacity="0.6"/>
+
+  <!-- Character Group: Wave -->
+  <g id="character-wave">
+    <!-- Legs -->
+    <rect x="118" y="270" width="26" height="85" rx="12" fill="#201124"/>
+    <rect x="156" y="270" width="26" height="85" rx="12" fill="#201124"/>
+    <ellipse cx="128" cy="360" rx="20" ry="10" fill="#FFF1E8"/>
+    <ellipse cx="172" cy="360" rx="20" ry="10" fill="#FFF1E8"/>
+
+    <!-- Torso -->
+    <path d="M100 170 Q150 155 200 170 L210 280 Q150 290 90 280 Z" fill="url(#jacket)"/>
+    <path d="M130 165 L150 230 L170 165 Z" fill="#FFF1E8"/>
+    <polygon points="146,200 154,200 156,240 144,240" fill="#F5D061"/>
+
+    <!-- Left Arm (Resting on hip) -->
+    <path d="M100 180 Q68 220 100 250" fill="none" stroke="url(#jacket)" stroke-width="22" stroke-linecap="round"/>
+    <circle cx="102" cy="250" r="12" fill="url(#skin)"/>
+
+    <!-- Right Arm Waving High in the air! -->
+    <path d="M195 180 Q240 140 235 90" fill="none" stroke="url(#jacket)" stroke-width="22" stroke-linecap="round"/>
+    <!-- Hand waving -->
+    <ellipse cx="236" cy="80" rx="14" ry="16" fill="url(#skin)"/>
+    <!-- Fingers spread in wave -->
+    <circle cx="228" cy="68" r="5" fill="url(#skin)"/>
+    <circle cx="236" cy="65" r="5" fill="url(#skin)"/>
+    <circle cx="244" cy="68" r="5" fill="url(#skin)"/>
+    <circle cx="250" cy="76" r="4.5" fill="url(#skin)"/>
+    
+    <!-- Motion lines for wave -->
+    <path d="M256 60 Q265 72 260 84" fill="none" stroke="#F5D061" stroke-width="3" stroke-linecap="round"/>
+    <path d="M266 64 Q275 74 270 88" fill="none" stroke="#F5D061" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Delivery Cap (Fun surprise element) -->
+    <ellipse cx="150" cy="62" rx="42" ry="12" fill="#781D48"/>
+    <path d="M112 62 Q150 35 188 62 Z" fill="#781D48"/>
+    <path d="M140 64 L205 60 Q208 68 198 72 L140 68 Z" fill="#F5D061"/> <!-- Cap visor -->
+    <!-- Mini emblem on cap -->
+    <circle cx="150" cy="48" r="6" fill="#FFF1E8"/>
+    <text x="147" y="52" font-size="10" font-family="sans-serif" font-weight="bold" fill="#781D48">D</text>
+
+    <!-- Neck & Head -->
+    <rect x="138" y="140" width="24" height="30" rx="6" fill="url(#skin)"/>
+    <ellipse cx="150" cy="115" rx="48" ry="52" fill="url(#skin)"/>
+    <ellipse cx="100" cy="118" rx="10" ry="14" fill="url(#skin)"/>
+    <ellipse cx="200" cy="118" rx="10" ry="14" fill="url(#skin)"/>
+
+    <!-- Eyeglasses -->
+    <rect x="114" y="102" width="30" height="24" rx="7" fill="none" stroke="#221124" stroke-width="4"/>
+    <rect x="156" y="102" width="30" height="24" rx="7" fill="none" stroke="#221124" stroke-width="4"/>
+    <line x1="144" y1="112" x2="156" y2="112" stroke="#221124" stroke-width="4"/>
+
+    <!-- Excited Happy Eyes -->
+    <ellipse cx="129" cy="114" rx="6" ry="7" fill="#1C0912"/>
+    <ellipse cx="171" cy="114" rx="6" ry="7" fill="#1C0912"/>
+    <circle cx="131" cy="110" r="2.5" fill="#FFFFFF"/>
+    <circle cx="173" cy="110" r="2.5" fill="#FFFFFF"/>
+
+    <!-- Big Cheerful Open Mouth Smile -->
+    <path d="M132 130 Q150 160 168 130 Z" fill="#681534"/>
+    <!-- Tongue & Teeth -->
+    <rect x="140" y="130" width="20" height="6" rx="2" fill="#FFFFFF"/>
+    <ellipse cx="150" cy="148" rx="10" ry="6" fill="#F3B7D0"/>
+
+    <circle cx="116" cy="126" r="9" fill="#F3B7D0" opacity="0.6"/>
+    <circle cx="184" cy="126" r="9" fill="#F3B7D0" opacity="0.6"/>
+
+    <path d="M120 94 Q130 86 140 92" fill="none" stroke="#1C0912" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M160 92 Q170 86 180 94" fill="none" stroke="#1C0912" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F1332"/>
+      <stop offset="50%" stop-color="#781D48"/>
+      <stop offset="100%" stop-color="#351126"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#F3B7D0" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#351126" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="450" rx="16" fill="url(#bgGrad1)"/>
+  <circle cx="300" cy="200" r="180" fill="url(#sunGlow)"/>
+
+  <!-- Ornate Border Frame -->
+  <rect x="25" y="25" width="550" height="400" rx="12" fill="none" stroke="#F5D061" stroke-width="2" stroke-dasharray="6 4" opacity="0.6"/>
+
+  <!-- Corner Hearts -->
+  <g fill="#F3B7D0" opacity="0.7">
+    <path d="M45 45 C40 38 30 42 30 48 C30 56 45 66 45 66 C45 66 60 56 60 48 C60 42 50 38 45 45 Z"/>
+    <path d="M555 45 C550 38 540 42 540 48 C540 56 555 66 555 66 C555 66 570 56 570 48 C570 42 560 38 555 45 Z"/>
+    <path d="M45 405 C40 398 30 402 30 408 C30 416 45 426 45 426 C45 426 60 416 60 408 C60 402 50 398 45 405 Z"/>
+    <path d="M555 405 C550 398 540 402 540 408 C540 416 555 426 555 426 C555 426 570 416 570 408 C570 402 560 398 555 405 Z"/>
+  </g>
+
+  <!-- Center Portrait Frame Illustration -->
+  <circle cx="300" cy="180" r="80" fill="#240A18" stroke="#F5D061" stroke-width="3"/>
+  
+  <!-- Silhouette / Artistic Queen Crown -->
+  <path d="M265 140 L280 155 L300 130 L320 155 L335 140 L330 165 L270 165 Z" fill="#F5D061"/>
+  <circle cx="300" cy="126" r="4" fill="#FFF1E8"/>
+  <circle cx="265" cy="136" r="3" fill="#FFF1E8"/>
+  <circle cx="335" cy="136" r="3" fill="#FFF1E8"/>
+
+  <!-- Sparkles -->
+  <polygon points="210,120 213,128 221,131 213,134 210,142 207,134 199,131 207,128" fill="#F3B7D0"/>
+  <polygon points="390,120 393,128 401,131 393,134 390,142 387,134 379,131 387,128" fill="#F3B7D0"/>
+
+  <!-- Center Heart Silhouette -->
+  <path d="M300 185 C285 165 255 175 255 195 C255 220 300 245 300 245 C300 245 345 220 345 195 C345 175 315 165 300 185 Z" fill="#F3B7D0" opacity="0.9"/>
+
+  <!-- Typography Labels -->
+  <text x="300" y="305" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="bold" fill="#FFF1E8" text-anchor="middle" letter-spacing="1">
+    Deepika's Beautiful Smile
+  </text>
+  <text x="300" y="335" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" fill="#F3B7D0" text-anchor="middle" letter-spacing="0.5">
+    Photo Placeholder • Replace with your favourite photo of Deepika!
+  </text>
+  <rect x="200" y="360" width="200" height="30" rx="15" fill="#351126" stroke="#F3B7D0" stroke-width="1.5"/>
+  <text x="300" y="380" font-family="sans-serif" font-size="12" font-weight="bold" fill="#F5D061" text-anchor="middle">
+    📸 assets/photos/deepika-01.jpg
+  </text>
+</svg>

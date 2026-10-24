@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A magical, funny, and heartfelt birthday surprise website for Deepika. Created with love.">
+  <title>Happy Birthday Deepika! ❤️ A Little Comedy, A Lot of Love</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Floating Background Canvas (Stars & Soft Hearts) -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Confetti Celebration Canvas -->
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- Top Navigation & Audio Controls -->
+  <header class="top-nav" role="banner">
+    <div class="nav-brand">
+      <span class="heart-icon">💖</span>
+      <span class="brand-text">For Deepika</span>
+    </div>
+
+    <!-- Scene Progress Breadcrumb -->
+    <nav class="scene-progress" aria-label="Surprise story progress">
+      <button class="progress-dot active" data-scene="1" title="Scene 1: The Door" aria-label="Scene 1: The Door"></button>
+      <button class="progress-dot" data-scene="2" title="Scene 2: Delivery Boy" aria-label="Scene 2: Delivery Boy"></button>
+      <button class="progress-dot" data-scene="3" title="Scene 3: The Dance" aria-label="Scene 3: The Dance"></button>
+      <button class="progress-dot" data-scene="4" title="Scene 4: Our World" aria-label="Scene 4: Our World"></button>
+      <button class="progress-dot" data-scene="5" title="Scene 5: Birthday Cake" aria-label="Scene 5: Birthday Cake"></button>
+      <button class="progress-dot" data-scene="6" title="Scene 6: Love Letter" aria-label="Scene 6: Love Letter"></button>
+    </nav>
+
+    <!-- Audio / Music Controller -->
+    <div class="audio-controls">
+      <button id="audio-toggle-btn" class="audio-btn" aria-label="Toggle background music and sound effects" title="Toggle Sound">
+        <span class="audio-icon" id="audio-icon">🎵</span>
+        <span class="audio-label" id="audio-label">Music Off</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Interactive Experience Container -->
+  <main class="experience-container" id="main-content">
+
+    <!-- ========================================================== -->
+    <!-- SCENE 1: THE MYSTERIOUS DOOR 🚪                            -->
+    <!-- ========================================================== -->
+    <section id="scene-1" class="scene active-scene" aria-label="Scene 1: The Mysterious Door">
+      <div class="scene-content door-scene-layout">
+        <div class="glow-orb" aria-hidden="true"></div>
+
+        <div class="scene-header">
+          <span class="magical-badge">✨ A Birthday Secret ✨</span>
+          <h1 class="scene-title" id="s1-headline">Psst… Deepika, someone has a surprise for you.</h1>
+          <p class="scene-subtitle" id="s1-subtext">Are you ready to see what is waiting behind this magical door?</p>
+        </div>
+
+        <!-- The 3D Interactive Door Assembly -->
+        <div class="door-frame-wrapper" id="door-wrapper" role="button" tabindex="0" aria-label="Knock on the magical surprise door">
+          <!-- Ambient Lantern Glow -->
+          <div class="door-ambient-lantern left" aria-hidden="true">🕯️</div>
+          <div class="door-ambient-lantern right" aria-hidden="true">🕯️</div>
+
+          <!-- Outer Architectural Arch Frame -->
+          <div class="door-arch">
+            <!-- Door Portal Interior Reveal (Visible when door swings open) -->
+            <div class="door-interior">
+              <div class="portal-light"></div>
+              <div class="portal-peek-character" id="portal-peek-char" aria-hidden="true">
+                <!-- Peek character SVG inside portal -->
+                <img src="assets/character/peek.svg" alt="Boyfriend peeking curiously" class="portal-char-img" id="portal-char-img">
+              </div>
+            </div>
+
+            <!-- The Door Leaf (Rotates on Y-axis) -->
+            <div class="door-leaf" id="door-leaf">
+              <div class="door-wood-texture">
+                <div class="door-panel top">
+                  <span class="panel-engraving">D &amp; ❤️</span>
+                </div>
+                <div class="door-knocker" id="door-knocker">
+                  <div class="knocker-ring"></div>
+                </div>
+                <div class="door-panel bottom">
+                  <div class="glowing-keyhole"></div>
+                </div>
+                <div class="door-knob"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scene-actions">
+          <button id="btn-knock" class="btn btn-primary btn-pulse" aria-label="Knock Knock">
+            <span class="btn-icon">🚪</span>
+            <span class="btn-text" id="s1-btn-text">Knock Knock 🚪</span>
+          </button>
+          <p class="interaction-hint" id="s1-hint">Click the door or button to knock</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================================== -->
+    <!-- SCENE 2: THE BOYFRIEND HAS ARRIVED 😂                      -->
+    <!-- ========================================================== -->
+    <section id="scene-2" class="scene" aria-label="Scene 2: The Delivery Boy Arrival">
+      <div class="scene-content character-reveal-layout">
+        <div class="comedy-confetti-burst" aria-hidden="true"></div>
+
+        <div class="character-showcase">
+          <!-- Speech / Dialogue Balloon -->
+          <div class="speech-bubble" id="speech-bubble-scene2">
+            <div class="bubble-speaker-tag">Express Birthday Delivery 🛵💨</div>
+            <p class="bubble-text" id="s2-dialogue">Madam Deepika! Your birthday surprise delivery boy has arrived! 😂</p>
+            <p class="bubble-subtext" id="s2-subdialogue">Special express delivery with 100% genuine drama, 200% love, and zero return policy!</p>
+          </div>
+
+          <!-- The Animated Caricature Showcase -->
+          <div class="caricature-stage" id="stage-scene2">
+            <div class="stage-spotlight" aria-hidden="true"></div>
+            <div class="character-avatar-container anim-wave" id="s2-character-wrapper">
+              <img src="assets/character/wave.svg" alt="Animated caricature of boyfriend waving happily with delivery cap" class="character-img" id="s2-character-img">
+            </div>
+          </div>
+        </div>
+
+        <div class="scene-actions">
+          <button id="btn-show-what-got" class="btn btn-primary btn-sparkle" aria-label="Show Me What You Got">
+            <span class="btn-icon">✨</span>
+            <span class="btn-text" id="s2-btn-text">Show Me What You Got! ✨</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================================== -->
+    <!-- SCENE 3: THE UNEXPECTED DANCE 🕺                           -->
+    <!-- ========================================================== -->
+    <section id="scene-3" class="scene" aria-label="Scene 3: The Unexpected Comedy Dance">
+      <div class="scene-content dance-scene-layout">
+        <div class="scene-header">
+          <span class="magical-badge">🕺 Dedicated Dance Performance 🕺</span>
+          <h2 class="scene-title">World Famous Dance Routine</h2>
+          <div class="dialogue-box">
+            <p class="dialogue-english" id="s3-dialogue-en">I practised this dance just for you… please rate my performance! 😂</p>
+            <p class="dialogue-telugu" id="s3-dialogue-te">“Ee dance kosam chaala practice chesa… rating maatram honest ga ivvu! 😂”</p>
+          </div>
+        </div>
+
+        <!-- The Dancing Stage -->
+        <div class="dance-stage">
+          <div class="dance-floor-glow" aria-hidden="true"></div>
+          <div class="disco-lights" aria-hidden="true">
+            <span class="disco-beam beam-1"></span>
+            <span class="disco-beam beam-2"></span>
+            <span class="disco-beam beam-3"></span>
+          </div>
+
+          <!-- Animated Grooving Caricature -->
+          <div class="character-avatar-container anim-dance" id="s3-dance-character-wrapper">
+            <img src="assets/character/dance.svg" alt="Animated caricature performing funny exaggerated dance moves" class="character-img" id="s3-character-img">
+          </div>
+
+          <!-- Dance Reaction Badges (Animated on click) -->
+          <div class="dance-cheers" id="dance-cheers-container" aria-live="polite"></div>
+        </div>
+
+        <!-- Interactive Dance Rating Bar -->
+        <div class="rating-card">
+          <p class="rating-prompt">Rate this killer performance:</p>
+          <div class="rating-buttons" role="group" aria-label="Dance rating stars">
+            <button class="btn-rating" data-stars="5" aria-label="5 Stars: Oscar Level">⭐⭐⭐⭐⭐ Oscar Level!</button>
+            <button class="btn-rating" data-stars="10" aria-label="10 Stars: Unbeatable">⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ 10/10 Legend!</button>
+            <button class="btn-rating" data-stars="100" aria-label="Infinity Stars: Cutest ever">💖 Cutest Boy Ever!</button>
+          </div>
+          <p class="rating-feedback" id="rating-feedback-text"></p>
+        </div>
+
+        <div class="scene-actions dual-actions">
+          <button id="btn-replay-dance" class="btn btn-secondary" aria-label="Replay Dance">
+            <span class="btn-icon">🔁</span>
+            <span class="btn-text">Replay Dance 🕺</span>
+          </button>
+          <button id="btn-dance-continue" class="btn btn-primary" aria-label="Continue to Our Little World">
+            <span class="btn-icon">👉</span>
+            <span class="btn-text" id="s3-continue-text">Okay, 10/10! Next Surprise 👉</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================================== -->
+    <!-- SCENE 4: OUR LITTLE WORLD ❤️                                -->
+    <!-- ========================================================== -->
+    <section id="scene-4" class="scene" aria-label="Scene 4: Our Little World">
+      <div class="scene-content world-scene-layout">
+        <div class="scene-header">
+          <span class="magical-badge">❤️ Special Memories &amp; Surprises ❤️</span>
+          <h2 class="scene-title" id="s4-title">Our Little World ❤️</h2>
+          <p class="scene-subtitle" id="s4-subtitle">Three little boxes of happiness crafted just for you</p>
+        </div>
+
+        <!-- Interactive World Navigation Tabs -->
+        <div class="world-tabs" role="tablist" aria-label="Our Little World Sections">
+          <button class="world-tab active" role="tab" id="tab-btn-memories" aria-selected="true" aria-controls="tab-pane-memories">
+            <span class="tab-icon">📸</span>
+            <span class="tab-text">Our Memories</span>
+          </button>
+          <button class="world-tab" role="tab" id="tab-btn-notes" aria-selected="false" aria-controls="tab-pane-notes">
+            <span class="tab-icon">💌</span>
+            <span class="tab-text">Little Notes</span>
+          </button>
+          <button class="world-tab" role="tab" id="tab-btn-gift" aria-selected="false" aria-controls="tab-pane-gift">
+            <span class="tab-icon">🎁</span>
+            <span class="tab-text">Mystery Gift</span>
+          </button>
+        </div>
+
+        <!-- Tab Content Panes -->
+        <div class="world-tab-content">
+
+          <!-- TAB PANE A: OUR MEMORIES (Photo Gallery) -->
+          <div class="tab-pane active" id="tab-pane-memories" role="tabpanel" aria-labelledby="tab-btn-memories">
+            <div class="gallery-header-note">
+              <p>✨ Click any memory photo to view it in full size!</p>
+            </div>
+            <div class="memories-grid" id="memories-grid-container">
+              <!-- Dynamically rendered via config.js -->
+            </div>
+          </div>
+
+          <!-- TAB PANE B: LITTLE NOTES -->
+          <div class="tab-pane" id="tab-pane-notes" role="tabpanel" aria-labelledby="tab-btn-notes" hidden>
+            <div class="notes-header-note">
+              <p>💌 Tap each card to unfold a secret note written for you!</p>
+            </div>
+            <div class="notes-grid" id="notes-grid-container">
+              <!-- Dynamically rendered via config.js -->
+            </div>
+          </div>
+
+          <!-- TAB PANE C: MYSTERY GIFT -->
+          <div class="tab-pane" id="tab-pane-gift" role="tabpanel" aria-labelledby="tab-btn-gift" hidden>
+            <div class="gift-box-stage">
+              <div class="gift-prompt" id="gift-instruction">Tap the gift box to unwrap your special surprise! 🎁</div>
+
+              <!-- Interactive 3D Gift Box -->
+              <div class="mystery-gift-wrapper" id="mystery-gift-wrapper" role="button" tabindex="0" aria-label="Tap to open mystery gift">
+                <div class="gift-lid" id="gift-lid">
+                  <div class="ribbon-bow">
+                    <span class="bow-loop left"></span>
+                    <span class="bow-loop right"></span>
+                    <span class="bow-knot"></span>
+                  </div>
+                  <div class="lid-strap"></div>
+                </div>
+                <div class="gift-box-body" id="gift-box-body">
+                  <div class="box-ribbon-vertical"></div>
+                  <div class="box-sparkle-indicator">✨</div>
+                </div>
+              </div>
+
+              <!-- Surprise Revealed Content Inside Gift -->
+              <div class="gift-surprise-card" id="gift-surprise-card" hidden>
+                <div class="coupon-header">
+                  <span class="coupon-seal">👑 BIRTHDAY SPECIAL</span>
+                  <h3 class="coupon-title" id="gift-surprise-title">Ta-da! 🎉 A Lifetime Coupon!</h3>
+                </div>
+                <div class="coupon-body">
+                  <p id="gift-surprise-message">
+                    This coupon entitles Deepika to unlimited hugs, unlimited patience during shopping, emergency ice cream deliveries, and 100% unconditional love whenever needed! Non-refundable and valid forever! ❤️
+                  </p>
+                </div>
+                <div class="coupon-footer">
+                  <span class="validity-tag">Status: Activated Forever ♾️</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="scene-actions">
+          <button id="btn-world-continue" class="btn btn-primary" aria-label="Continue to Birthday Cake">
+            <span class="btn-icon">🎂</span>
+            <span class="btn-text">Time for Cake! 🎂</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================================== -->
+    <!-- SCENE 5: THE BIRTHDAY CAKE 🎂                              -->
+    <!-- ========================================================== -->
+    <section id="scene-5" class="scene" aria-label="Scene 5: The Birthday Cake">
+      <div class="scene-content cake-scene-layout">
+        <div class="scene-header">
+          <span class="magical-badge">🎂 Make A Wish 🎂</span>
+          <h2 class="scene-title" id="s5-headline">Happy Birthday, Deepika! 🎂</h2>
+          <p class="scene-subtitle" id="s5-subtext">Make a wish in your heart before you blow out the candles!</p>
+        </div>
+
+        <!-- The Interactive Birthday Cake Stage -->
+        <div class="cake-display-stage">
+          <div class="cake-pedestal">
+            <!-- SVG / Layered Birthday Cake -->
+            <div class="cake-container" id="cake-interactive">
+              <!-- Animated Candle Flames -->
+              <div class="candles-rack" id="candles-rack">
+                <div class="candle candle-1">
+                  <div class="flame" id="flame-1"></div>
+                  <div class="smoke" id="smoke-1"></div>
+                  <div class="wick"></div>
+                  <div class="candle-stick"></div>
+                </div>
+                <div class="candle candle-2">
+                  <div class="flame" id="flame-2"></div>
+                  <div class="smoke" id="smoke-2"></div>
+                  <div class="wick"></div>
+                  <div class="candle-stick"></div>
+                </div>
+                <div class="candle candle-3">
+                  <div class="flame" id="flame-3"></div>
+                  <div class="smoke" id="smoke-3"></div>
+                  <div class="wick"></div>
+                  <div class="candle-stick"></div>
+                </div>
+              </div>
+
+              <!-- Top Tier: Soft Cream -->
+              <div class="cake-tier tier-top">
+                <div class="frosting-drips">
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="strawberry-decorations">
+                  <span class="strawberry">🍓</span>
+                  <span class="strawberry">🌸</span>
+                  <span class="strawberry">🍓</span>
+                </div>
+              </div>
+
+              <!-- Middle Tier: Rose Wine Layer -->
+              <div class="cake-tier tier-middle">
+                <div class="cake-piping">
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="cake-name-plaque">
+                  <span class="cake-script-name">Deepika</span>
+                </div>
+              </div>
+
+              <!-- Bottom Tier: Deep Burgundy Layer -->
+              <div class="cake-tier tier-bottom">
+                <div class="pearl-garland"></div>
+              </div>
+
+              <!-- Cake Stand Plate -->
+              <div class="cake-plate"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Celebration Banner revealed after blowing candles -->
+        <div class="wished-celebration-card" id="wished-celebration-card" hidden>
+          <div class="wish-stars">✨ 🌟 💖 🌟 ✨</div>
+          <h3 class="wish-title" id="s5-wished-title">✨ May All Your Wishes Come True! ✨</h3>
+          <p class="wish-message" id="s5-wished-subtext">Sending you endless love, good health, boundless joy, and success in everything you touch.</p>
+        </div>
+
+        <div class="scene-actions">
+          <button id="btn-blow-candles" class="btn btn-primary btn-pulse" aria-label="Blow the Candles">
+            <span class="btn-icon">🕯️</span>
+            <span class="btn-text" id="s5-blow-btn-text">Blow the Candles 🕯️</span>
+          </button>
+          <button id="btn-to-letter" class="btn btn-primary btn-sparkle" aria-label="Read My Birthday Letter" hidden>
+            <span class="btn-icon">💌</span>
+            <span class="btn-text" id="s5-to-letter-text">Read My Birthday Letter 💌</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================================== -->
+    <!-- SCENE 6: THE HEARTFELT LETTER 💌                          -->
+    <!-- ========================================================== -->
+    <section id="scene-6" class="scene" aria-label="Scene 6: The Heartfelt Letter">
+      <div class="scene-content letter-scene-layout">
+        
+        <!-- Caricature Presenting Letter -->
+        <div class="letter-presenter-stage" id="letter-presenter-stage">
+          <div class="character-avatar-container anim-letter" id="s6-character-wrapper">
+            <img src="assets/character/holding-letter.svg" alt="Animated caricature holding a sealed love letter" class="character-img" id="s6-character-img">
+          </div>
+          <p class="envelope-prompt" id="s6-envelope-prompt">A special letter sealed with love just for you.</p>
+          <button id="btn-open-letter" class="btn btn-primary btn-pulse" aria-label="Open My Letter">
+            <span class="btn-icon">💌</span>
+            <span class="btn-text" id="s6-open-btn-text">Open My Letter 💌</span>
+          </button>
+        </div>
+
+        <!-- The Unfurled Heartfelt Letter Parchment -->
+        <div class="letter-parchment-wrapper" id="letter-parchment-wrapper" hidden>
+          <div class="letter-parchment">
+            <div class="parchment-stamp">❤️ With Love</div>
+            
+            <div class="letter-actions-bar">
+              <button id="btn-skip-typewriter" class="btn-skip-typewriter" aria-label="Show Full Letter Immediately">
+                Show Full Letter ⚡
+              </button>
+            </div>
+
+            <header class="letter-header">
+              <h2 class="letter-heading" id="s6-letter-title">Happy Birthday, Deepika! ❤️</h2>
+              <div class="letter-date-stamp" id="s6-letter-date">27 November 2026</div>
+            </header>
+
+            <article class="letter-body-content" id="letter-typewriter-target" aria-live="polite">
+              <!-- Typewriter text inserted dynamically -->
+            </article>
+
+            <footer class="letter-footer">
+              <p class="letter-closing-quote" id="s6-closing-quote">
+                “Your smile is the best reward for this little surprise. ❤️”
+              </p>
+              <div class="letter-signature" id="s6-letter-signature">
+                With all my love,<br>
+                <span class="signature-name" id="s6-sender-name">Your Delivery Boy ❤️</span>
+              </div>
+            </footer>
+          </div>
+
+          <!-- Replay Button -->
+          <div class="replay-story-wrapper">
+            <button id="btn-replay-story" class="btn btn-secondary btn-replay" aria-label="Replay Our Story from Beginning">
+              <span class="btn-icon">🔄</span>
+              <span class="btn-text" id="s6-replay-btn-text">Replay Our Story 🔄</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================== -->
+  <!-- ACCESSIBLE PHOTO LIGHTBOX DIALOG                          -->
+  <!-- ========================================================== -->
+  <dialog id="photo-modal" class="photo-modal" aria-labelledby="modal-photo-title" closedby="any">
+    <div class="modal-inner">
+      <button id="btn-close-modal" class="modal-close-btn" aria-label="Close photo view">✕</button>
+      <div class="modal-image-wrapper">
+        <img id="modal-photo-img" src="" alt="" class="modal-photo-img">
+      </div>
+      <div class="modal-details">
+        <span class="modal-photo-date" id="modal-photo-date"></span>
+        <h3 class="modal-photo-title" id="modal-photo-title"></h3>
+        <p class="modal-photo-caption" id="modal-photo-caption"></p>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- HTML5 Background Audio Element (Graceful fallback) -->
+  <audio id="bgm-audio" preload="none" loop></audio>
+
+  <!-- Configuration and Logic Scripts -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

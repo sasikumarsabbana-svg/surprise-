@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F3B7D0" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#351126" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FBD6B7"/>
+      <stop offset="100%" stop-color="#F3BD92"/>
+    </linearGradient>
+    <linearGradient id="jacket" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#781D48"/>
+      <stop offset="100%" stop-color="#4F0E2D"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D1C1E"/>
+      <stop offset="100%" stop-color="#15090B"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="150" cy="200" r="140" fill="url(#glow)"/>
+  <ellipse cx="150" cy="380" rx="75" ry="14" fill="#1B0713" opacity="0.6"/>
+
+  <!-- Surprise Exclamation Marks -->
+  <g fill="#F5D061" opacity="0.9">
+    <path d="M50 70 L54 110 L46 110 Z"/>
+    <circle cx="50" cy="120" r="4"/>
+    <path d="M250 70 L254 110 L246 110 Z"/>
+    <circle cx="250" cy="120" r="4"/>
+  </g>
+
+  <!-- Character Group: Surprised / Jaws dropped -->
+  <g id="character-surprised">
+    <!-- Legs shaken -->
+    <rect x="114" y="270" width="26" height="85" rx="12" fill="#201124"/>
+    <rect x="160" y="270" width="26" height="85" rx="12" fill="#201124"/>
+    <ellipse cx="122" cy="360" rx="20" ry="10" fill="#FFF1E8"/>
+    <ellipse cx="178" cy="360" rx="20" ry="10" fill="#FFF1E8"/>
+
+    <!-- Torso -->
+    <path d="M100 170 Q150 155 200 170 L210 280 Q150 290 90 280 Z" fill="url(#jacket)"/>
+    <path d="M130 165 L150 230 L170 165 Z" fill="#FFF1E8"/>
+    <polygon points="146,200 154,200 156,240 144,240" fill="#F5D061"/>
+
+    <!-- Hands clutching cheeks in cute comedy shock -->
+    <path d="M95 190 Q80 140 106 128" fill="none" stroke="url(#jacket)" stroke-width="20" stroke-linecap="round"/>
+    <ellipse cx="106" cy="128" rx="12" ry="10" fill="url(#skin)"/>
+
+    <path d="M205 190 Q220 140 194 128" fill="none" stroke="url(#jacket)" stroke-width="20" stroke-linecap="round"/>
+    <ellipse cx="194" cy="128" rx="12" ry="10" fill="url(#skin)"/>
+
+    <!-- Neck & Head -->
+    <rect x="138" y="140" width="24" height="30" rx="6" fill="url(#skin)"/>
+    <ellipse cx="150" cy="115" rx="48" ry="54" fill="url(#skin)"/>
+    <ellipse cx="100" cy="118" rx="10" ry="14" fill="url(#skin)"/>
+    <ellipse cx="200" cy="118" rx="10" ry="14" fill="url(#skin)"/>
+
+    <!-- Hair standing a bit on end -->
+    <path d="M96 110 C96 55 140 40 150 38 C180 38 205 55 204 110 C194 95 185 88 170 90 C150 82 130 90 115 85 C105 90 100 98 96 110 Z" fill="url(#hair)"/>
+    <path d="M140 40 Q150 15 165 25 Q155 42 145 44 Z" fill="url(#hair)"/>
+    <path d="M155 42 Q175 22 185 35 Q170 45 160 48 Z" fill="url(#hair)"/>
+
+    <!-- Glasses raised slightly -->
+    <rect x="114" y="96" width="30" height="24" rx="7" fill="none" stroke="#221124" stroke-width="4"/>
+    <rect x="156" y="96" width="30" height="24" rx="7" fill="none" stroke="#221124" stroke-width="4"/>
+    <line x1="144" y1="106" x2="156" y2="106" stroke="#221124" stroke-width="4"/>
+
+    <!-- Huge Round Wide Eyes "WOW!" -->
+    <ellipse cx="129" cy="108" rx="8" ry="9" fill="#1C0912"/>
+    <ellipse cx="171" cy="108" rx="8" ry="9" fill="#1C0912"/>
+    <circle cx="132" cy="105" r="3.5" fill="#FFFFFF"/>
+    <circle cx="174" cy="105" r="3.5" fill="#FFFFFF"/>
+
+    <!-- Cheeks (Big pink circles) -->
+    <circle cx="114" cy="128" r="9" fill="#F3B7D0" opacity="0.7"/>
+    <circle cx="186" cy="128" r="9" fill="#F3B7D0" opacity="0.7"/>
+
+    <!-- Comedic Big "O" Mouth -->
+    <ellipse cx="150" cy="142" rx="14" ry="18" fill="#58102B" stroke="#781D48" stroke-width="3"/>
+    <ellipse cx="150" cy="150" rx="8" ry="6" fill="#F3B7D0"/>
+
+    <!-- High arched raised eyebrows -->
+    <path d="M118 84 Q129 74 140 84" fill="none" stroke="#1C0912" stroke-width="4" stroke-linecap="round"/>
+    <path d="M160 84 Q171 74 182 84" fill="none" stroke="#1C0912" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>

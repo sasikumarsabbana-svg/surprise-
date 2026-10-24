@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" width="100%" height="100%">
+  <defs>
+    <radialGradient id="danceGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F5D061" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#F3B7D0" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#351126" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FBD6B7"/>
+      <stop offset="100%" stop-color="#F3BD92"/>
+    </linearGradient>
+    <linearGradient id="jacket" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9E225D"/>
+      <stop offset="100%" stop-color="#5B1135"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D1C1E"/>
+      <stop offset="100%" stop-color="#15090B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Musical Sparkles Background -->
+  <circle cx="160" cy="200" r="150" fill="url(#danceGlow)"/>
+  
+  <!-- Floating Musical Notes & Sparkles -->
+  <g fill="#F5D061" opacity="0.85">
+    <!-- Note 1 -->
+    <path d="M45 100 Q55 80 70 85 L70 115 A10 8 0 1 1 55 110 L55 95 Z"/>
+    <!-- Note 2 -->
+    <path d="M260 90 Q275 75 285 80 L285 110 A10 8 0 1 1 270 105 L270 90 Z"/>
+    <!-- Sparkles -->
+    <polygon points="50,160 54,170 64,174 54,178 50,188 46,178 36,174 46,170" fill="#F3B7D0"/>
+    <polygon points="275,190 279,200 289,204 279,208 275,218 271,208 261,204 271,200" fill="#F5D061"/>
+  </g>
+
+  <!-- Shadow skewed for dance -->
+  <ellipse cx="145" cy="390" rx="85" ry="14" fill="#1B0713" opacity="0.6"/>
+
+  <!-- Character Group: Dynamic Dance! -->
+  <g id="character-dance" transform="rotate(-4 160 210)">
+    <!-- Right Leg straight down / bent slightly -->
+    <path d="M165 270 Q160 320 150 365" fill="none" stroke="#201124" stroke-width="26" stroke-linecap="round"/>
+    <ellipse cx="145" cy="375" rx="22" ry="11" fill="#FFF1E8"/>
+
+    <!-- Left Leg kicked out in funny disco angle! -->
+    <path d="M125 270 Q90 310 65 340" fill="none" stroke="#201124" stroke-width="26" stroke-linecap="round"/>
+    <ellipse cx="58" cy="345" rx="20" ry="11" fill="#FFF1E8" transform="rotate(-25 58 345)"/>
+
+    <!-- Torso grooving -->
+    <path d="M110 170 Q160 150 205 175 L210 275 Q155 295 115 275 Z" fill="url(#jacket)"/>
+    <path d="M135 165 L155 230 L175 165 Z" fill="#FFF1E8"/>
+    <!-- Gold party bowtie -->
+    <polygon points="145,175 165,185 165,175 145,185" fill="#F5D061"/>
+    <circle cx="155" cy="180" r="4" fill="#E6A820"/>
+
+    <!-- Left Arm: Hand on hip with sass -->
+    <path d="M115 180 Q75 210 115 240" fill="none" stroke="url(#jacket)" stroke-width="22" stroke-linecap="round"/>
+    <circle cx="118" cy="240" r="12" fill="url(#skin)"/>
+
+    <!-- Right Arm: Disco Finger Pointing to the Sky! -->
+    <path d="M195 180 Q225 120 255 60" fill="none" stroke="url(#jacket)" stroke-width="22" stroke-linecap="round"/>
+    <!-- Pointing Hand -->
+    <ellipse cx="258" cy="55" rx="12" ry="12" fill="url(#skin)"/>
+    <rect x="254" y="36" width="9" height="24" rx="4.5" fill="url(#skin)" transform="rotate(18 258 48)"/>
+    <!-- Sparkle at fingertip -->
+    <polygon points="268,30 272,38 280,42 272,46 268,54 264,46 256,42 264,38" fill="#F5D061"/>
+
+    <!-- Neck & Head tilted joyfully -->
+    <rect x="142" y="140" width="24" height="28" rx="6" fill="url(#skin)"/>
+    <ellipse cx="154" cy="112" rx="46" ry="50" fill="url(#skin)"/>
+    <ellipse cx="106" cy="115" rx="9" ry="13" fill="url(#skin)"/>
+    <ellipse cx="202" cy="115" rx="9" ry="13" fill="url(#skin)"/>
+
+    <!-- Hair with energetic bounce -->
+    <path d="M104 105 C104 55 145 40 156 40 C186 40 210 60 208 105 C198 90 188 85 174 88 C154 80 134 88 119 84 C110 88 106 95 104 105 Z" fill="url(#hair)"/>
+    <!-- Big funky hair tuft -->
+    <path d="M150 42 Q170 20 190 28 Q172 44 160 46 Z" fill="url(#hair)"/>
+
+    <!-- Funky Shades / Glasses -->
+    <rect x="120" y="98" width="30" height="24" rx="7" fill="#1B0713" stroke="#F5D061" stroke-width="3.5"/>
+    <rect x="160" y="98" width="30" height="24" rx="7" fill="#1B0713" stroke="#F5D061" stroke-width="3.5"/>
+    <line x1="150" y1="108" x2="160" y2="108" stroke="#F5D061" stroke-width="3.5"/>
+    <!-- Cool lens shine reflection -->
+    <line x1="124" y1="116" x2="136" y2="102" stroke="#FFF1E8" stroke-width="2.5" opacity="0.8"/>
+    <line x1="164" y1="116" x2="176" y2="102" stroke="#FFF1E8" stroke-width="2.5" opacity="0.8"/>
+
+    <!-- Hilarious Big Confident Grin -->
+    <path d="M136 132 Q156 160 176 132 Z" fill="#681534"/>
+    <rect x="144" y="132" width="24" height="6" rx="2" fill="#FFFFFF"/>
+    <ellipse cx="156" cy="148" rx="10" ry="5" fill="#F3B7D0"/>
+
+    <circle cx="122" cy="126" r="9" fill="#F3B7D0" opacity="0.6"/>
+    <circle cx="188" cy="126" r="9" fill="#F3B7D0" opacity="0.6"/>
+  </g>
+</svg>
