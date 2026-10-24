@@ -17,38 +17,38 @@ const BIRTHDAY_CONFIG = {
   // -----------------------------------------------------------------
   recipientName: "Deepika",
   birthdayDate: "27 November 2026", // Displayed on cake and memory banners
-  senderName: "Your Delivery Boy ❤️", // Replace with your name or sweet nickname
+  senderName: "Your very own surprise delivery boy 😂❤️", // Replace with your name or sweet nickname
 
   // -----------------------------------------------------------------
-  // 2. SCENE 1: THE MYSTERIOUS DOOR 🚪
+  // 2. SCENE 1: THE MYSTERIOUS INTRODUCTION 🚪
   // -----------------------------------------------------------------
   scene1: {
-    headline: "Psst… Deepika, someone has a surprise for you.",
+    headline: "Psst… Deepika, someone has a surprise for you ❤️",
     subtext: "Are you ready to see what is waiting behind this magical door?",
-    knockButtonText: "Knock Knock 🚪",
-    hintText: "Click the door or button to knock",
+    knockButtonText: "Open Your Surprise ✨",
+    hintText: "Click the door or button to open",
   },
 
   // -----------------------------------------------------------------
-  // 3. SCENE 2: THE BOYFRIEND HAS ARRIVED 😂
+  // 3. SCENE 2: MY FUNNY ENTRANCE 😂
   // -----------------------------------------------------------------
   scene2: {
-    dialogue: "Madam Deepika! Your birthday surprise delivery boy has arrived! 😂",
-    subDialogue: "Special express delivery with 100% genuine drama, 200% love, and zero return policy!",
-    actionButtonText: "Show Me What You Got! ✨",
+    dialogue: "Madam Deepika! Mee birthday surprise delivery boy vachesaadu! 😂🎁",
+    subDialogue: "Delivery successful avvalante… first naa performance chudali! 😎",
+    actionButtonText: "Continue 👉",
   },
 
   // -----------------------------------------------------------------
-  // 4. SCENE 3: THE UNEXPECTED COMEDY DANCE 🕺
+  // 4. SCENE 3: COMEDY DANCE SHOW 🕺
   // -----------------------------------------------------------------
   scene3: {
     // English dialogue
-    englishDialogue: "I practised this dance just for you… please rate my performance! 😂",
-    // Optional Telugu-English dialogue (can be toggled or displayed together)
+    englishDialogue: "I practiced this dance just for you… please rate my performance! 😂",
+    // Telugu-English dialogue
     teluguDialogue: "Ee dance kosam chaala practice chesa… rating maatram honest ga ivvu! 😂",
-    showTeluguDialogue: true, // Set to false if you want English only
-    replayDanceButtonText: "Replay Dance 🔁",
-    continueButtonText: "Okay, You Earned a 10/10! Next Surprise 👉",
+    showTeluguDialogue: true,
+    replayDanceButtonText: "Replay Dance 😂",
+    continueButtonText: "Next Surprise ❤️",
     ratings: [
       { stars: "⭐⭐⭐⭐⭐", label: "Oscar-level performance!" },
       { stars: "⭐⭐⭐⭐", label: "Better than Bollywood!" },
@@ -145,7 +145,7 @@ const BIRTHDAY_CONFIG = {
   // 6. SCENE 5: THE BIRTHDAY CAKE 🎂
   // -----------------------------------------------------------------
   scene5: {
-    headline: "Happy Birthday, Deepika! 🎂",
+    headline: "Happy Birthday, Deepika! 🎂❤️",
     subtext: "Make a wish in your heart before you blow out the candles!",
     blowButtonText: "Blow the Candles 🕯️",
     wishedHeadline: "✨ May All Your Wishes Come True! ✨",
@@ -161,27 +161,27 @@ const BIRTHDAY_CONFIG = {
     openLetterButtonText: "Open My Letter 💌",
     letterTitle: "Happy Birthday, Deepika! ❤️",
     
-    // The placeholder letter text — replace or expand this with your own heartfelt words!
+    // Heartfelt letter personalized for Deepika
     letterBody: [
-      "Dear Deepika,",
+      "Dear Deepika ❤️,",
       "",
-      "Happy Birthday! ❤️",
+      "Happy Birthday to the person who makes ordinary moments feel special.",
       "",
-      "I created this little surprise to make you smile, laugh, and feel extra special on your birthday.",
+      "Today, I wanted to create something different for you—not just a birthday wish, but a little experience filled with laughter, surprises, and love.",
       "",
-      "This little website has silly moments, unexpected surprises, and a lot of care hidden inside it. Every animation, every little note, and every line of code was crafted thinking about bringing a genuine smile to your face.",
+      "First, you had to tolerate my comedy 😂. Now, I want you to know that behind every silly moment is someone who genuinely wishes you happiness, peace, success, and beautiful memories.",
       "",
-      "I hope your day is filled with boundless happiness, heartwarming laughter, delicious food, and memories you will cherish for years.",
+      "I hope this new year of your life brings you countless reasons to smile and dreams that slowly become reality.",
       "",
-      "Thank you for being such an extraordinary, radiant, and wonderful presence in my life.",
+      "Thank you for being someone so special to me. I hope this little surprise makes your birthday a little more memorable.",
       "",
-      "Happy Birthday once again, my favourite person!",
+      "Happy Birthday, Deepika! ❤️🎂",
       "",
-      "With lots and lots of love,",
-      "[YOUR NAME OR NICKNAME]"
+      "With lots of love,",
+      "Your very own surprise delivery boy 😂❤️"
     ],
     
-    closingQuote: "Your smile is the best reward for this little surprise. ❤️",
+    closingQuote: "“Your smile is the best reward for this little surprise. ❤️”",
     replayButtonText: "Replay Our Story 🔄",
     skipTypewriterText: "Show Full Letter ⚡"
   },
@@ -189,27 +189,23 @@ const BIRTHDAY_CONFIG = {
   // -----------------------------------------------------------------
   // 8. CHARACTER ASSETS SETTINGS
   // -----------------------------------------------------------------
-  // By default, the website uses the built-in animated caricature illustrations.
-  // When you have your own cutout photos or custom caricature images,
-  // place them in 'assets/character/' and set 'useCustomImages: true'.
+  // Using Sasi's custom caricature generated from his photo!
   character: {
-    useCustomImages: false, // Set to true when you add full pose cutout PNGs
+    useCustomImages: true, // Enabled for Sasi's caricature
+    caricatureImage: "assets/sasi-caricature.png",
     
     // COMEDY REAL PHOTO BOBBLEHEAD MODE:
-    // Drop your photo into 'assets/character/' as 'my-photo.jpg' or 'my-photo.png'
-    // and set usePhotoBobblehead: true!
-    // Your real face will be mounted on the funny dancing caricature body with cool shades!
     usePhotoBobblehead: false,
-    myPhotoPath: "assets/character/my-photo.jpg",
+    myPhotoPath: "assets/sasi-raw.jpeg",
 
     customImages: {
-      idle: "assets/character/idle.png",
-      peek: "assets/character/peek.png",
-      wave: "assets/character/wave.png",
-      dance: "assets/character/dance.png",
-      surprised: "assets/character/surprised.png",
-      holdingGift: "assets/character/holding-gift.png",
-      holdingLetter: "assets/character/holding-letter.png"
+      idle: "assets/sasi-caricature.png",
+      peek: "assets/sasi-caricature.png",
+      wave: "assets/sasi-caricature.png",
+      dance: "assets/sasi-caricature.png",
+      surprised: "assets/sasi-caricature.png",
+      holdingGift: "assets/sasi-caricature.png",
+      holdingLetter: "assets/sasi-caricature.png"
     }
   },
 

@@ -406,7 +406,9 @@
     });
 
     // Special scene initialization
-    if (sceneNumber === 3) {
+    if (sceneNumber === 2) {
+      triggerScene2Entrance();
+    } else if (sceneNumber === 3) {
       triggerConfettiBurst(window.innerWidth / 2, window.innerHeight * 0.4, 40);
       playChimeSound();
     } else if (sceneNumber === 4) {
@@ -484,8 +486,58 @@
 
 
   // ===================================================================
-  // 6. SCENE 2: THE BOYFRIEND HAS ARRIVED 😂
+  // 6. SCENE 2: MY FUNNY ENTRANCE 😂
   // ===================================================================
+  let scene2PauseTimeout = null;
+
+  function triggerScene2Entrance() {
+    const s2CharWrapper = document.getElementById("s2-character-wrapper");
+    const s2Sub = document.getElementById("s2-subdialogue");
+    const btnShow = document.getElementById("btn-show-what-got");
+
+    if (s2CharWrapper) {
+      s2CharWrapper.classList.remove("anim-entrance");
+      void s2CharWrapper.offsetWidth; // Force CSS reflow
+      s2CharWrapper.classList.add("anim-entrance");
+    }
+
+    if (s2Sub) {
+      s2Sub.style.opacity = "0";
+      s2Sub.style.transform = "translateY(10px)";
+      s2Sub.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    }
+
+    if (btnShow) {
+      btnShow.style.opacity = "0";
+      btnShow.style.pointerEvents = "none";
+      btnShow.style.transform = "translateY(10px)";
+      btnShow.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    }
+
+    playChimeSound();
+    triggerConfettiBurst(window.innerWidth / 2, window.innerHeight * 0.45, 30);
+
+    if (scene2PauseTimeout) clearTimeout(scene2PauseTimeout);
+
+    // Short pause, then show punchline and continue button
+    scene2PauseTimeout = setTimeout(() => {
+      if (s2Sub) {
+        s2Sub.style.opacity = "1";
+        s2Sub.style.transform = "translateY(0)";
+      }
+      playChimeSound();
+      triggerConfettiBurst(window.innerWidth / 2, window.innerHeight * 0.45, 25);
+
+      setTimeout(() => {
+        if (btnShow) {
+          btnShow.style.opacity = "1";
+          btnShow.style.pointerEvents = "auto";
+          btnShow.style.transform = "translateY(0)";
+        }
+      }, 350);
+    }, 1100);
+  }
+
   function initScene2() {
     const btnShow = document.getElementById("btn-show-what-got");
 
@@ -950,6 +1002,7 @@
     btnOpenLetter.addEventListener("click", () => {
       letterPresenterStage.style.display = "none";
       letterParchmentWrapper.hidden = false;
+      letterParchmentWrapper.style.display = "block";
       playCelebrationSound();
       triggerConfettiBurst(window.innerWidth / 2, window.innerHeight * 0.4, 60);
       startTypewriter();
@@ -1011,8 +1064,10 @@
 
       // 6. Reset letter
       if (typewriterInterval) clearTimeout(typewriterInterval);
+      if (scene2PauseTimeout) clearTimeout(scene2PauseTimeout);
       letterPresenterStage.style.display = "flex";
       letterParchmentWrapper.hidden = true;
+      letterParchmentWrapper.style.display = "none";
       typewriterTarget.innerHTML = "";
       if (btnSkipTypewriter) btnSkipTypewriter.style.display = "inline-block";
 
@@ -1032,11 +1087,13 @@
     const s3CharImg = document.getElementById("s3-character-img");
     const s6CharImg = document.getElementById("s6-character-img");
 
+    const caricature = config.character?.caricatureImage || "assets/sasi-caricature.png";
+
     const imgMap = [
-      { el: portalCharImg, fallback: "assets/character/peek.svg", custom: config.character?.customImages?.peek },
-      { el: s2CharImg, fallback: "assets/character/wave.svg", custom: config.character?.customImages?.wave },
-      { el: s3CharImg, fallback: "assets/character/dance.svg", custom: config.character?.customImages?.dance },
-      { el: s6CharImg, fallback: "assets/character/holding-letter.svg", custom: config.character?.customImages?.holdingLetter }
+      { el: portalCharImg, fallback: "assets/character/peek.svg", custom: config.character?.customImages?.peek || caricature },
+      { el: s2CharImg, fallback: "assets/character/wave.svg", custom: config.character?.customImages?.wave || caricature },
+      { el: s3CharImg, fallback: "assets/character/dance.svg", custom: config.character?.customImages?.dance || caricature },
+      { el: s6CharImg, fallback: "assets/character/holding-letter.svg", custom: config.character?.customImages?.holdingLetter || caricature }
     ];
 
     imgMap.forEach(({ el, fallback, custom }) => {
@@ -1045,7 +1102,7 @@
         this.src = fallback;
       });
 
-      if (config.character && config.character.useCustomImages && custom) {
+      if (custom) {
         el.src = custom;
       }
     });

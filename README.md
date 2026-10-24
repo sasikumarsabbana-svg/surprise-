@@ -25,19 +25,23 @@ This website combines a mysterious magical 3D door reveal, a funny animated deli
 
 ## Overview & Features
 
-- **Scene 1: The Mysterious Door 🚪** — 3D perspective swinging door with a knock knocker, ambient lantern glow, realistic sound effects, and a peeking character inside the portal.
-- **Scene 2: The Boyfriend Delivery Boy 😂** — Express delivery boy arrival with comedic speech bubble and waving character animation.
-- **Scene 3: The Unexpected Dance 🕺** — Comedy dance routine with disco beams, Telugu-English / English dialogues, interactive 10/10 rating stars, and replay dance controls.
-- **Scene 4: Our Little World ❤️** —
-  - **Our Memories**: Responsive photo cards with full-screen zoomable lightbox (`<dialog>`), captions, and dates. Built-in fallbacks ensure no broken images ever appear!
-  - **Little Notes**: Interactive sweet reminder cards.
-  - **Mystery Gift**: 3D animated wrapped gift box that unseals with confetti to reveal an unlimited lifetime birthday coupon.
-- **Scene 5: The Birthday Cake 🎂** — Multi-tiered pastel cake with flickering SVG candles. Clicking *"Blow the Candles"* extinguishes flames, creates gentle smoke drift, plays a chime, showers confetti, and displays an emotional blessing.
-- **Scene 6: The Heartfelt Letter 💌** — Unfurls an elegant love letter parchment with realistic typewriter animation, a *"Show Full Letter ⚡"* instant skip button, and a *"Replay Our Story 🔄"* button that cleanly resets the entire journey.
+- **Scene 1: The Mysterious Introduction 🚪** — Elegant dark burgundy background with glowing stars, tiny hearts, and a 3D swinging door with a knocker ring. Displays *"Psst… Deepika, someone has a surprise for you ❤️"* and button *"Open Your Surprise ✨"*.
+- **Scene 2: My Funny Entrance 😂** — Reveals Sasi's custom 2D caricature as the charming surprise delivery boy. Features a two-beat comedic entrance dialogue:
+  1. *"Madam Deepika! Mee birthday surprise delivery boy vachesaadu! 😂🎁"*
+  2. Short pause, followed by *"Delivery successful avvalante… first naa performance chudali! 😎"*
+  3. Clearly visible *"Continue 👉"* button.
+- **Scene 3: Comedy Dance Show 🕺** — Sasi's caricature performs on stage with disco beams and smooth, fluid CSS keyframe choreography. Includes interactive dance move buttons (*Bollywood Thumka*, *Moonwalk Slide*, *Funky Disco*, *Playful Comedy Groove*), rating stars, *"Replay Dance 😂"*, and *"Next Surprise ❤️"*.
+- **Scene 4: Our Memories ❤️** — Three interactive cards:
+  - **Our Memories 📸**: Responsive photo cards with lightbox zoom (`<dialog>`), captions, and dates.
+  - **Little Notes 💌**: Sweet, heartfelt reminder notes for Deepika.
+  - **Mystery Gift 🎁**: 3D animated wrapped gift box that unseals with confetti to reveal an unlimited lifetime birthday coupon.
+- **Scene 5: Birthday Cake 🎂** — Multi-tiered pastel cake with flickering candles and warm lighting. Displays *"Happy Birthday, Deepika! 🎂❤️"*. Clicking *"Blow the Candles 🕯️"* extinguishes flames with gentle smoke drift, fanfare, confetti, and reveals *"Read My Birthday Letter 💌"*.
+- **Scene 6: The Heartfelt Letter 💌** — Sasi's caricature presents a sealed letter. Clicking *"Open My Letter 💌"* unfurls an elegant parchment with gentle typewriter effect, instant skip button (*"Show Full Letter ⚡"*), and a *"Replay Our Story 🔄"* button that cleanly resets the entire journey.
 - **Audio Synthesizer & Canvas Effects**:
-  - Web Audio API synthesizer for realistic wooden knocks, magical chimes, blowout puff, and celebratory fanfare (works in any browser without needing external audio files!).
+  - Web Audio API synthesizer for realistic knocks, magical chimes, blowout puff, and fanfare (100% functional without external files!).
   - Canvas-based confetti explosion system and ambient floating stars and hearts.
-  - Zero heavy external frameworks or dependencies — ultra-fast loading on all phones!
+  - Sasi's caricature located at `assets/sasi-caricature.png`.
+  - Zero heavy external frameworks or dependencies — ultra-fast loading on all devices!
 
 ---
 
@@ -51,23 +55,11 @@ deepika-birthday-surprise/
 ├── config.js             # EASY CONFIGURATION: Edit all text, photos & letters here!
 ├── README.md             # This comprehensive guide
 └── assets/
-    ├── character/        # Caricature poses (idle, peek, wave, dance, gift, letter)
-    │   ├── idle.svg
-    │   ├── peek.svg
-    │   ├── wave.svg
-    │   ├── dance.svg
-    │   ├── surprised.svg
-    │   ├── holding-gift.svg
-    │   ├── holding-letter.svg
-    │   └── README.md
-    ├── photos/           # Photo gallery pictures (Deepika & your memories)
-    │   ├── deepika-01.svg (Illustrated fallback)
-    │   ├── memory-01.svg
-    │   ├── memory-02.svg
-    │   ├── memory-03.svg
-    │   └── README.md
-    └── audio/            # Background music folder (optional)
-        └── README.md
+    ├── sasi-caricature.png # Sasi's 2D comedy caricature character
+    ├── sasi-raw.jpeg       # Sasi's original photograph
+    ├── character/          # Character poses and fallbacks
+    ├── photos/             # Photo gallery pictures (Deepika & your memories)
+    └── audio/              # Background music folder (optional)
 ```
 
 ---
