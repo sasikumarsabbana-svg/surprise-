@@ -152,19 +152,24 @@
     <!-- ========================================================== -->
     <!-- SCENE 3: THE UNEXPECTED DANCE 🕺                           -->
     <!-- ========================================================== -->
-    <section id="scene-3" class="scene" aria-label="Scene 3: The Unexpected Comedy Dance">
+    <section id="scene-3" class="scene" aria-label="Scene 3: The Movie Hero Dance Show">
       <div class="scene-content dance-scene-layout">
         <div class="scene-header">
-          <span class="magical-badge">🕺 Dedicated Dance Performance 🕺</span>
-          <h2 class="scene-title">World Famous Dance Routine</h2>
+          <span class="magical-badge">🕺 Movie Hero Dance Performance 🕺</span>
+          <h2 class="scene-title">The Blockbuster Hero Dance Routine</h2>
           <div class="dialogue-box">
-            <p class="dialogue-english" id="s3-dialogue-en">I practised this dance just for you… please rate my performance! 😂</p>
-            <p class="dialogue-telugu" id="s3-dialogue-te">“Ee dance kosam chaala practice chesa… rating maatram honest ga ivvu! 😂”</p>
+            <p class="dialogue-english" id="s3-dialogue-en">Watch your hero in action! Rate my blockbuster dance performance! 😎🕺</p>
+            <p class="dialogue-telugu" id="s3-dialogue-te">“Hero entry ichesaadu… performance chusi whistle veyyalsinde! 😂🔥”</p>
           </div>
         </div>
 
+        <!-- Dance Routine Active Step Banner -->
+        <div class="dance-routine-banner" id="dance-routine-banner" aria-live="polite">
+          🎬 Movie Hero Routine: Full Choreography Show
+        </div>
+
         <!-- The Dancing Stage -->
-        <div class="dance-stage">
+        <div class="dance-stage" id="dance-stage-container">
           <div class="dance-floor-glow" aria-hidden="true"></div>
           <div class="disco-lights" aria-hidden="true">
             <span class="disco-beam beam-1"></span>
@@ -172,49 +177,183 @@
             <span class="disco-beam beam-3"></span>
           </div>
 
-          <!-- Animated Grooving Caricature with Sasi's Real Caricature -->
-          <div class="character-avatar-container anim-dance anim-thumka" id="s3-dance-character-wrapper">
-            <img src="assets/sasi-caricature.png" alt="Sasi caricature performing funny comedic dance moves" class="character-img" id="s3-character-img">
-            <!-- Comedy Real Photo Bobblehead Head Cutout -->
-            <div class="bobblehead-head" id="s3-bobblehead" hidden>
-              <div class="bobblehead-frame">
-                <img src="" alt="My Photo Head" id="s3-bobblehead-photo" class="bobblehead-photo">
-                <span class="bobblehead-party-hat" aria-hidden="true">👑</span>
-                <span class="bobblehead-shades" aria-hidden="true">🕶️</span>
-              </div>
-            </div>
+          <!-- 2D ARTICULATED HERO PUPPET RIG (Sasi's Genuine Caricature Head & Articulated Limbs) -->
+          <div class="hero-character-rig dance-mode-full-movie" id="s3-dance-character-wrapper">
+            <svg viewBox="0 0 320 440" class="hero-rig-svg" id="hero-rig-svg" aria-label="Sasi 2D Hero Dance Puppet">
+              <defs>
+                <!-- Suit Fabric Gradient: Hero Black / Midnight Charcoal -->
+                <linearGradient id="heroSuit" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#2C2430"/>
+                  <stop offset="50%" stop-color="#1A131C"/>
+                  <stop offset="100%" stop-color="#0E080F"/>
+                </linearGradient>
+                <!-- Lapel Satin Gloss -->
+                <linearGradient id="heroLapel" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#3D3040"/>
+                  <stop offset="100%" stop-color="#18111A"/>
+                </linearGradient>
+                <!-- Skin Tone (Matching Sasi's Caricature) -->
+                <linearGradient id="heroSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#EAA373"/>
+                  <stop offset="100%" stop-color="#D98A58"/>
+                </linearGradient>
+                <!-- Gold Accessories Gradient -->
+                <linearGradient id="heroGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFE082"/>
+                  <stop offset="60%" stop-color="#F5D061"/>
+                  <stop offset="100%" stop-color="#D49B24"/>
+                </linearGradient>
+                <!-- Shoe Gloss -->
+                <linearGradient id="heroShoe" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#3E3540"/>
+                  <stop offset="50%" stop-color="#19131C"/>
+                  <stop offset="100%" stop-color="#0C070D"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Ground Shadow (expands and contracts with rhythm) -->
+              <ellipse id="rig-shadow" cx="160" cy="415" rx="80" ry="12" fill="#140612" opacity="0.6"/>
+
+              <!-- SKELETAL RIG ROOT -->
+              <g id="rig-body-root">
+                
+                <!-- LEFT LEG (Hip pivot at 142, 270) -->
+                <g id="rig-leg-l" class="rig-part">
+                  <!-- Left Thigh -->
+                  <path d="M134 270 L128 330 Q126 340 132 340 L148 340 Q152 340 150 330 L152 270 Z" fill="url(#heroSuit)"/>
+                  <!-- Left Shin & Foot (Knee pivot at 138, 335) -->
+                  <g id="rig-shin-l" class="rig-part">
+                    <path d="M128 335 L124 395 L146 395 L148 335 Z" fill="url(#heroSuit)"/>
+                    <!-- Left Shoe (Ankle pivot at 134, 395) -->
+                    <g id="rig-foot-l" class="rig-part">
+                      <path d="M110 395 Q104 405 116 412 L152 412 Q156 405 150 395 Z" fill="url(#heroShoe)"/>
+                      <line x1="112" y1="411" x2="152" y2="411" stroke="#F5D061" stroke-width="2"/>
+                    </g>
+                  </g>
+                </g>
+
+                <!-- RIGHT LEG (Hip pivot at 178, 270) -->
+                <g id="rig-leg-r" class="rig-part">
+                  <!-- Right Thigh -->
+                  <path d="M168 270 L170 330 Q172 340 178 340 L194 340 Q198 340 196 330 L188 270 Z" fill="url(#heroSuit)"/>
+                  <!-- Right Shin & Foot (Knee pivot at 182, 335) -->
+                  <g id="rig-shin-r" class="rig-part">
+                    <path d="M174 335 L174 395 L196 395 L194 335 Z" fill="url(#heroSuit)"/>
+                    <!-- Right Shoe (Ankle pivot at 188, 395) -->
+                    <g id="rig-foot-r" class="rig-part">
+                      <path d="M170 395 Q166 405 176 412 L212 412 Q216 405 210 395 Z" fill="url(#heroShoe)"/>
+                      <line x1="172" y1="411" x2="212" y2="411" stroke="#F5D061" stroke-width="2"/>
+                    </g>
+                  </g>
+                </g>
+
+                <!-- WAIST & GOLD BUCKLE -->
+                <path d="M128 260 L192 260 L188 285 L132 285 Z" fill="url(#heroSuit)"/>
+                <rect x="128" y="260" width="64" height="8" rx="2" fill="#140E16"/>
+                <rect x="152" y="258" width="16" height="12" rx="3" fill="none" stroke="url(#heroGold)" stroke-width="2.5"/>
+
+                <!-- TORSO (Chest & Tailored Hero Jacket, Pivot at 160, 262) -->
+                <g id="rig-torso" class="rig-part">
+                  <!-- Inner Dark Shirt -->
+                  <path d="M136 172 L184 172 L178 262 L142 262 Z" fill="#201622"/>
+                  
+                  <!-- Hero Gold Chain -->
+                  <path d="M148 180 Q160 215 172 180" fill="none" stroke="url(#heroGold)" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle cx="160" cy="204" r="3.5" fill="url(#heroGold)"/>
+
+                  <!-- Broad Tailored Hero Jacket -->
+                  <path d="M112 170 Q160 162 208 170 L196 264 L124 264 Z" fill="url(#heroSuit)"/>
+
+                  <!-- Satin Lapels -->
+                  <path d="M114 170 L146 220 L154 260 L142 262 L124 170 Z" fill="url(#heroLapel)"/>
+                  <path d="M206 170 L174 220 L166 260 L178 262 L196 170 Z" fill="url(#heroLapel)"/>
+                  <!-- Burgundy Pocket Square with Gold Rim -->
+                  <polygon points="126,206 134,200 138,206" fill="#A41E3A"/>
+                  <rect x="124" y="206" width="16" height="2.5" rx="1" fill="url(#heroGold)"/>
+
+                  <!-- LEFT ARM (Shoulder pivot at 114, 172) -->
+                  <g id="rig-arm-l" class="rig-part">
+                    <ellipse cx="114" cy="176" rx="14" ry="12" fill="url(#heroSuit)"/>
+                    <path d="M106 176 L94 220 L112 222 L122 178 Z" fill="url(#heroSuit)"/>
+                    <!-- Left Forearm (Elbow pivot at 102, 220) -->
+                    <g id="rig-forearm-l" class="rig-part">
+                      <path d="M94 220 L86 264 L102 266 L112 222 Z" fill="url(#heroSuit)"/>
+                      <rect x="85" y="262" width="18" height="5" rx="2" fill="#FFFFFF"/>
+                      <!-- Left Hand (Wrist pivot at 93, 267) -->
+                      <g id="rig-hand-l" class="rig-part">
+                        <ellipse cx="93" cy="275" rx="9" ry="10" fill="url(#heroSkin)"/>
+                        <path d="M86 270 Q92 284 98 270" fill="none" stroke="#C27344" stroke-width="1.5"/>
+                      </g>
+                    </g>
+                  </g>
+
+                  <!-- RIGHT ARM (Shoulder pivot at 206, 172) -->
+                  <g id="rig-arm-r" class="rig-part">
+                    <ellipse cx="206" cy="176" rx="14" ry="12" fill="url(#heroSuit)"/>
+                    <path d="M214 176 L226 220 L208 222 L198 178 Z" fill="url(#heroSuit)"/>
+                    <!-- Right Forearm (Elbow pivot at 218, 220) -->
+                    <g id="rig-forearm-r" class="rig-part">
+                      <path d="M226 220 L234 264 L218 266 L208 222 Z" fill="url(#heroSuit)"/>
+                      <rect x="217" y="262" width="18" height="5" rx="2" fill="#FFFFFF"/>
+                      <!-- Right Hand (Wrist pivot at 227, 267) -->
+                      <g id="rig-hand-r" class="rig-part">
+                        <ellipse cx="227" cy="275" rx="9" ry="10" fill="url(#heroSkin)"/>
+                        <path d="M222 270 Q228 284 234 270" fill="none" stroke="#C27344" stroke-width="1.5"/>
+                      </g>
+                    </g>
+                  </g>
+
+                  <!-- NECK & SASI'S GENUINE CARICATURE HEAD (Pivot at 160, 156) -->
+                  <g id="rig-head-group" class="rig-part">
+                    <rect x="148" y="146" width="24" height="24" rx="6" fill="url(#heroSkin)"/>
+                    <!-- Sasi's Real Caricature Head Cutout Image -->
+                    <image href="assets/character/sasi-head.png" x="85" y="10" width="150" height="150" preserveAspectRatio="xMidYMid meet" id="rig-sasi-head-img"/>
+                    
+                    <!-- Hero Shades Star Sparkle (Animated on dramatic pose) -->
+                    <g id="hero-shades-glint" class="hero-glint">
+                      <polygon points="132,92 135,101 144,104 135,107 132,116 129,107 120,104 129,101" fill="#FFFFFF"/>
+                      <circle cx="132" cy="104" r="3" fill="url(#heroGold)"/>
+                    </g>
+                  </g>
+
+                </g> <!-- End Torso -->
+
+              </g> <!-- End Body Root -->
+            </svg>
           </div>
 
           <!-- Dance Reaction Badges (Animated on click) -->
           <div class="dance-cheers" id="dance-cheers-container" aria-live="polite"></div>
         </div>
 
-        <!-- Interactive Dance Move Selector Bar -->
+        <!-- Interactive Hero Dance Choreography Selector -->
         <div class="dance-moves-card">
-          <p class="dance-moves-title">🕺 Switch My Dance Move:</p>
+          <p class="dance-moves-title">🎬 Choose Hero Choreography Step:</p>
           <div class="dance-move-buttons" role="group" aria-label="Dance steps selection">
-            <button class="btn-dance-move active" data-move="thumka">💃 Bollywood Thumka</button>
-            <button class="btn-dance-move" data-move="moonwalk">👟 Moonwalk Slide</button>
-            <button class="btn-dance-move" data-move="disco">✨ Funky Disco</button>
-            <button class="btn-dance-move" data-move="crazy">🤪 Crazy Energy</button>
+            <button class="btn-dance-move active" data-move="full-movie">🎬 Full Movie Routine</button>
+            <button class="btn-dance-move" data-move="mass">🕺 Mass Footwork</button>
+            <button class="btn-dance-move" data-move="shoulders">✨ Shoulder Pops</button>
+            <button class="btn-dance-move" data-move="moonwalk">👟 Moonwalk Glide</button>
+            <button class="btn-dance-move" data-move="spin">🌪️ 360 Spin</button>
+            <button class="btn-dance-move" data-move="pose">💥 Hero Final Pose</button>
           </div>
         </div>
 
         <!-- Interactive Dance Rating Bar -->
         <div class="rating-card">
-          <p class="rating-prompt">Rate this killer performance:</p>
+          <p class="rating-prompt">Rate this blockbuster performance:</p>
           <div class="rating-buttons" role="group" aria-label="Dance rating stars">
             <button class="btn-rating" data-stars="5" aria-label="5 Stars: Oscar Level">⭐⭐⭐⭐⭐ Oscar Level!</button>
             <button class="btn-rating" data-stars="10" aria-label="10 Stars: Unbeatable">⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ 10/10 Legend!</button>
-            <button class="btn-rating" data-stars="100" aria-label="Infinity Stars: Cutest ever">💖 Cutest Boy Ever!</button>
+            <button class="btn-rating" data-stars="100" aria-label="Infinity Stars: Cutest ever">💖 Cutest Hero Ever!</button>
           </div>
           <p class="rating-feedback" id="rating-feedback-text"></p>
         </div>
 
         <div class="scene-actions dual-actions">
           <button id="btn-replay-dance" class="btn btn-secondary" aria-label="Replay Dance">
-            <span class="btn-icon">😂</span>
-            <span class="btn-text">Replay Dance 😂</span>
+            <span class="btn-icon">🔁</span>
+            <span class="btn-text">Replay Dance 🎬</span>
           </button>
           <button id="btn-dance-continue" class="btn btn-primary" aria-label="Continue to Our Memories">
             <span class="btn-icon">❤️</span>

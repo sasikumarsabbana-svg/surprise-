@@ -410,7 +410,6 @@
       triggerScene2Entrance();
     } else if (sceneNumber === 3) {
       triggerConfettiBurst(window.innerWidth / 2, window.innerHeight * 0.4, 40);
-      playChimeSound();
     } else if (sceneNumber === 4) {
       renderMemories();
       renderLittleNotes();
@@ -525,7 +524,6 @@
         s2Sub.style.opacity = "1";
         s2Sub.style.transform = "translateY(0)";
       }
-      playChimeSound();
       triggerConfettiBurst(window.innerWidth / 2, window.innerHeight * 0.45, 25);
 
       setTimeout(() => {
@@ -552,7 +550,6 @@
     }
 
     btnShow.addEventListener("click", () => {
-      playChimeSound();
       triggerConfettiBurst(window.innerWidth / 2, window.innerHeight * 0.4, 40);
       goToScene(3);
     });
@@ -560,8 +557,24 @@
 
 
   // ===================================================================
-  // 7. SCENE 3: THE UNEXPECTED DANCE 🕺
+  // 7. SCENE 3: THE UNEXPECTED DANCE 🕺 (2D ARTICULATED HERO CHOREOGRAPHY)
   // ===================================================================
+  let danceRoutineTimer = null;
+  const DANCE_CLASSES = [
+    "dance-mode-full-movie",
+    "dance-mode-mass",
+    "dance-mode-shoulders",
+    "dance-mode-moonwalk",
+    "dance-mode-spin",
+    "dance-mode-pose"
+  ];
+
+  function clearDanceClasses(wrapper) {
+    if (!wrapper) return;
+    DANCE_CLASSES.forEach((cls) => wrapper.classList.remove(cls));
+    wrapper.classList.remove("anim-dance", "anim-thumka", "anim-moonwalk", "anim-disco", "anim-crazy");
+  }
+
   function initScene3() {
     const s3DialogueEn = document.getElementById("s3-dialogue-en");
     const s3DialogueTe = document.getElementById("s3-dialogue-te");
@@ -569,6 +582,7 @@
     const btnReplayDance = document.getElementById("btn-replay-dance");
     const btnDanceContinue = document.getElementById("btn-dance-continue");
     const danceWrapper = document.getElementById("s3-dance-character-wrapper");
+    const routineBanner = document.getElementById("dance-routine-banner");
     const ratingButtons = document.querySelectorAll(".btn-rating");
     const ratingFeedback = document.getElementById("rating-feedback-text");
     const cheersContainer = document.getElementById("dance-cheers-container");
@@ -586,25 +600,143 @@
       if (s3ContinueText && config.scene3.continueButtonText) s3ContinueText.textContent = config.scene3.continueButtonText;
     }
 
-    // Replay dance button
-    btnReplayDance.addEventListener("click", () => {
-      const activeBtn = document.querySelector(".btn-dance-move.active");
-      const move = activeBtn ? activeBtn.getAttribute("data-move") : "thumka";
-      danceWrapper.classList.remove("anim-dance", "anim-thumka", "anim-moonwalk", "anim-disco", "anim-crazy");
-      void danceWrapper.offsetWidth; // Force CSS reflow
-      danceWrapper.classList.add(`anim-${move}`);
-      playChimeSound();
-      triggerConfettiBurst(window.innerWidth / 2, window.innerHeight * 0.45, 45);
+    const moveInfo = {
+      "full-movie": {
+        banner: "🎬 Full Movie Routine: Confident Entry & Hero Groove",
+        cheer: "🎬 Blockbuster Movie Routine!"
+      },
+      "mass": {
+        banner: "🕺 Mass Hero Footwork: High-Energy Beat & Stomps",
+        cheer: "🔥 Mass Tollywood Beat!"
+      },
+      "shoulders": {
+        banner: "✨ Shoulder Pops: Sharp Isolations & Swagger",
+        cheer: "✨ Signature Shoulder Pop!"
+      },
+      "moonwalk": {
+        banner: "👟 Smooth Moonwalk: Lateral Stage Glide",
+        cheer: "👟 Effortless Moonwalk!"
+      },
+      "spin": {
+        banner: "🌪️ 360 Controlled Spin: Coat Flare & Turn",
+        cheer: "🌪️ Flawless 360 Spin!"
+      },
+      "pose": {
+        banner: "💥 Dramatic Hero Final Pose: Shades Touch & Star Glint",
+        cheer: "😎 Hero Final Pose!"
+      }
+    };
 
-      // Add cheerful floating reaction badge
-      const cheer = document.createElement("div");
-      cheer.className = "cheer-badge";
-      cheer.textContent = "🕺 Killing It!";
-      cheersContainer.appendChild(cheer);
-      setTimeout(() => cheer.remove(), 1200);
+    function startFullMovieRoutine() {
+      if (danceRoutineTimer) clearInterval(danceRoutineTimer);
+      if (!routineBanner) return;
+
+      const phases = [
+        { time: 0, text: "🎬 1. Confident Hero Entry & Shoulder Swagger ✨" },
+        { time: 3000, text: "🕺 2. High-Energy Mass Footwork Beat 🔥" },
+        { time: 7000, text: "👟 3. Smooth Moonwalk Glide & 360 Spin 🌪️" },
+        { time: 10000, text: "💥 4. Blockbuster Hero Pose & Shades Glint 😎" }
+      ];
+
+      const startTime = Date.now();
+      function updatePhase() {
+        const elapsed = (Date.now() - startTime) % 14000;
+        let currentText = phases[0].text;
+        for (let i = phases.length - 1; i >= 0; i--) {
+          if (elapsed >= phases[i].time) {
+            currentText = phases[i].text;
+            break;
+          }
+        }
+        if (routineBanner.textContent !== currentText) {
+          routineBanner.textContent = currentText;
+        }
+      }
+
+      updatePhase();
+      danceRoutineTimer = setInterval(updatePhase, 400);
+    }
+
+    function stopFullMovieRoutine() {
+      if (danceRoutineTimer) {
+        clearInterval(danceRoutineTimer);
+        danceRoutineTimer = null;
+      }
+    }
+
+    function applyDanceMove(moveKey, showCheer = true) {
+      if (!danceWrapper) return;
+
+      clearDanceClasses(danceWrapper);
+      void danceWrapper.offsetWidth; // Force CSS reflow
+
+      const modeClass = `dance-mode-${moveKey}`;
+      danceWrapper.classList.add(modeClass);
+
+      if (moveKey === "full-movie") {
+        startFullMovieRoutine();
+      } else {
+        stopFullMovieRoutine();
+        if (routineBanner && moveInfo[moveKey]) {
+          routineBanner.textContent = moveInfo[moveKey].banner;
+        }
+      }
+
+      if (showCheer && cheersContainer && moveInfo[moveKey]) {
+        const cheer = document.createElement("div");
+        cheer.className = "cheer-badge";
+        cheer.textContent = moveInfo[moveKey].cheer;
+        cheersContainer.appendChild(cheer);
+        setTimeout(() => cheer.remove(), 1200);
+      }
+    }
+
+    // Start with the full movie routine on load
+    applyDanceMove("full-movie", false);
+
+    // Interactive Dance Move Selector Buttons (Silent by default)
+    const danceMoveBtns = document.querySelectorAll(".btn-dance-move");
+    danceMoveBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        danceMoveBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const move = btn.getAttribute("data-move") || "full-movie";
+        applyDanceMove(move, true);
+        triggerConfettiBurst(window.innerWidth / 2, window.innerHeight * 0.45, 25);
+      });
     });
 
-    // Rating star buttons
+    // Replay Dance Button (Clean reset, silent by default)
+    if (btnReplayDance) {
+      btnReplayDance.addEventListener("click", () => {
+        danceMoveBtns.forEach((b) => {
+          if (b.getAttribute("data-move") === "full-movie") b.classList.add("active");
+          else b.classList.remove("active");
+        });
+
+        applyDanceMove("full-movie", false);
+        triggerConfettiBurst(window.innerWidth / 2, window.innerHeight * 0.45, 40);
+
+        if (cheersContainer) {
+          const cheer = document.createElement("div");
+          cheer.className = "cheer-badge";
+          cheer.textContent = "🎬 Movie Hero Routine Replayed!";
+          cheersContainer.appendChild(cheer);
+          setTimeout(() => cheer.remove(), 1200);
+        }
+      });
+    }
+
+    // Continue to next scene (Silent by default)
+    if (btnDanceContinue) {
+      btnDanceContinue.addEventListener("click", () => {
+        stopFullMovieRoutine();
+        goToScene(4);
+      });
+    }
+
+    // Rating star buttons (Subtle celebration sound for 10/10 milestone)
     ratingButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
         ratingButtons.forEach((b) => b.classList.remove("selected"));
@@ -614,47 +746,13 @@
 
         const stars = btn.getAttribute("data-stars");
         if (stars === "100") {
-          ratingFeedback.textContent = "💖 Certified Cutest Delivery Boy in the World! Full Marks!";
+          ratingFeedback.textContent = "💖 Certified Cutest Delivery Boy & Hero in the World! Full Marks!";
         } else if (stars === "10") {
-          ratingFeedback.textContent = "🔥 10/10! Choreography inspired by sheer love and zero balance!";
+          ratingFeedback.textContent = "🔥 10/10! Blockbuster Hero Dance with 100% Swagger and Love!";
         } else {
           ratingFeedback.textContent = "⭐ Oscar Jury has just unanimously awarded the Best Dance Award!";
         }
       });
-    });
-
-    // Interactive Dance Move Selector Buttons
-    const danceMoveBtns = document.querySelectorAll(".btn-dance-move");
-    danceMoveBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        danceMoveBtns.forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        const move = btn.getAttribute("data-move"); // thumka, moonwalk, disco, crazy
-        danceWrapper.classList.remove("anim-dance", "anim-thumka", "anim-moonwalk", "anim-disco", "anim-crazy");
-        void danceWrapper.offsetWidth; // Force CSS reflow
-        danceWrapper.classList.add(`anim-${move}`);
-
-        playChimeSound();
-        triggerConfettiBurst(window.innerWidth / 2, window.innerHeight * 0.45, 30);
-
-        const cheerLabels = {
-          thumka: "💃 Bollywood Thumka!",
-          moonwalk: "👟 Smooth Moonwalk!",
-          disco: "✨ Funky Disco Fever!",
-          crazy: "🤪 100% Crazy In Love!"
-        };
-        const cheer = document.createElement("div");
-        cheer.className = "cheer-badge";
-        cheer.textContent = cheerLabels[move] || "🕺 Killing It!";
-        cheersContainer.appendChild(cheer);
-        setTimeout(() => cheer.remove(), 1200);
-      });
-    });
-
-    btnDanceContinue.addEventListener("click", () => {
-      playChimeSound();
-      goToScene(4);
     });
   }
 
@@ -686,7 +784,6 @@
           activePane.classList.add("active");
           activePane.hidden = false;
         }
-        playChimeSound();
       });
     });
 
@@ -716,10 +813,9 @@
       }
     });
 
-    // Scene 4 Continue button to Cake
+    // Scene 4 Continue button to Cake (Silent by default)
     const btnWorldContinue = document.getElementById("btn-world-continue");
     btnWorldContinue.addEventListener("click", () => {
-      playChimeSound();
       goToScene(5);
     });
 
@@ -799,7 +895,6 @@
         } else {
           modal.setAttribute("open", "");
         }
-        playChimeSound();
       }
 
       card.addEventListener("click", openLightbox);
@@ -837,7 +932,6 @@
       `;
 
       card.addEventListener("click", () => {
-        playChimeSound();
         triggerConfettiBurst(window.innerWidth / 2, window.innerHeight / 2, 25);
       });
 
@@ -890,7 +984,6 @@
     });
 
     btnToLetter.addEventListener("click", () => {
-      playChimeSound();
       goToScene(6);
     });
   }
@@ -1023,14 +1116,18 @@
       // 2. Reset dance
       const danceWrapper = document.getElementById("s3-dance-character-wrapper");
       if (danceWrapper) {
-        danceWrapper.classList.remove("anim-dance", "anim-thumka", "anim-moonwalk", "anim-disco", "anim-crazy");
-        danceWrapper.classList.add("anim-dance", "anim-thumka");
+        clearDanceClasses(danceWrapper);
+        danceWrapper.classList.add("dance-mode-full-movie");
       }
       const danceMoveBtns = document.querySelectorAll(".btn-dance-move");
-      danceMoveBtns.forEach((b, idx) => {
-        if (idx === 0) b.classList.add("active");
+      danceMoveBtns.forEach((b) => {
+        if (b.getAttribute("data-move") === "full-movie") b.classList.add("active");
         else b.classList.remove("active");
       });
+      const routineBanner = document.getElementById("dance-routine-banner");
+      if (routineBanner) {
+        routineBanner.textContent = "🎬 Movie Hero Routine: Full Choreography Show";
+      }
 
       // 3. Reset tabs and close modal if open
       const photoModal = document.getElementById("photo-modal");
@@ -1071,8 +1168,7 @@
       typewriterTarget.innerHTML = "";
       if (btnSkipTypewriter) btnSkipTypewriter.style.display = "inline-block";
 
-      // 7. Navigate back to Scene 1
-      playChimeSound();
+      // 7. Navigate back to Scene 1 (Silent by default)
       goToScene(1);
     });
   }

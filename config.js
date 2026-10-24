@@ -43,16 +43,16 @@ const BIRTHDAY_CONFIG = {
   // -----------------------------------------------------------------
   scene3: {
     // English dialogue
-    englishDialogue: "I practiced this dance just for you… please rate my performance! 😂",
+    englishDialogue: "Watch your hero in action! Rate my blockbuster dance performance! 😎🕺",
     // Telugu-English dialogue
-    teluguDialogue: "Ee dance kosam chaala practice chesa… rating maatram honest ga ivvu! 😂",
+    teluguDialogue: "Hero entry ichesaadu… performance chusi whistle veyyalsinde! 😂🔥",
     showTeluguDialogue: true,
-    replayDanceButtonText: "Replay Dance 😂",
+    replayDanceButtonText: "Replay Dance 🎬",
     continueButtonText: "Next Surprise ❤️",
     ratings: [
       { stars: "⭐⭐⭐⭐⭐", label: "Oscar-level performance!" },
       { stars: "⭐⭐⭐⭐", label: "Better than Bollywood!" },
-      { stars: "⭐⭐⭐⭐⭐", label: "Cutest delivery boy ever!" }
+      { stars: "⭐⭐⭐⭐⭐", label: "Cutest hero ever!" }
     ]
   },
 
