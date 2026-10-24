@@ -566,6 +566,35 @@
       });
     });
 
+    // Interactive Dance Move Selector Buttons
+    const danceMoveBtns = document.querySelectorAll(".btn-dance-move");
+    danceMoveBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        danceMoveBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const move = btn.getAttribute("data-move"); // thumka, moonwalk, disco, crazy
+        danceWrapper.classList.remove("anim-dance", "anim-thumka", "anim-moonwalk", "anim-disco", "anim-crazy");
+        void danceWrapper.offsetWidth; // Force CSS reflow
+        danceWrapper.classList.add(`anim-${move}`);
+
+        playChimeSound();
+        triggerConfettiBurst(window.innerWidth / 2, window.innerHeight * 0.45, 30);
+
+        const cheerLabels = {
+          thumka: "💃 Bollywood Thumka!",
+          moonwalk: "👟 Smooth Moonwalk!",
+          disco: "✨ Funky Disco Fever!",
+          crazy: "🤪 100% Crazy In Love!"
+        };
+        const cheer = document.createElement("div");
+        cheer.className = "cheer-badge";
+        cheer.textContent = cheerLabels[move] || "🕺 Killing It!";
+        cheersContainer.appendChild(cheer);
+        setTimeout(() => cheer.remove(), 1200);
+      });
+    });
+
     btnDanceContinue.addEventListener("click", () => {
       playChimeSound();
       goToScene(4);
@@ -993,6 +1022,26 @@
         el.src = custom;
       }
     });
+
+    // Comedy Real Photo Bobblehead Cutout Mode
+    if (config.character && config.character.usePhotoBobblehead && config.character.myPhotoPath) {
+      const bobbleheads = [
+        { wrap: document.getElementById("s2-bobblehead"), img: document.getElementById("s2-bobblehead-photo") },
+        { wrap: document.getElementById("s3-bobblehead"), img: document.getElementById("s3-bobblehead-photo") },
+        { wrap: document.getElementById("s6-bobblehead"), img: document.getElementById("s6-bobblehead-photo") }
+      ];
+
+      bobbleheads.forEach(({ wrap, img }) => {
+        if (!wrap || !img) return;
+        img.src = config.character.myPhotoPath;
+        img.onload = () => {
+          wrap.hidden = false;
+        };
+        img.onerror = () => {
+          wrap.hidden = true; // Graceful fallback: hide if photo not found
+        };
+      });
+    }
   }
 
 

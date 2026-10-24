@@ -193,7 +193,15 @@ const BIRTHDAY_CONFIG = {
   // When you have your own cutout photos or custom caricature images,
   // place them in 'assets/character/' and set 'useCustomImages: true'.
   character: {
-    useCustomImages: false, // Set to true when you add your real images!
+    useCustomImages: false, // Set to true when you add full pose cutout PNGs
+    
+    // COMEDY REAL PHOTO BOBBLEHEAD MODE:
+    // Drop your photo into 'assets/character/' as 'my-photo.jpg' or 'my-photo.png'
+    // and set usePhotoBobblehead: true!
+    // Your real face will be mounted on the funny dancing caricature body with cool shades!
+    usePhotoBobblehead: false,
+    myPhotoPath: "assets/character/my-photo.jpg",
+
     customImages: {
       idle: "assets/character/idle.png",
       peek: "assets/character/peek.png",

@@ -129,6 +129,12 @@
             <div class="stage-spotlight" aria-hidden="true"></div>
             <div class="character-avatar-container anim-wave" id="s2-character-wrapper">
               <img src="assets/character/wave.svg" alt="Animated caricature of boyfriend waving happily with delivery cap" class="character-img" id="s2-character-img">
+              <div class="bobblehead-head" id="s2-bobblehead" hidden>
+                <div class="bobblehead-frame">
+                  <img src="" alt="My Photo Head" id="s2-bobblehead-photo" class="bobblehead-photo">
+                  <span class="bobblehead-party-hat" aria-hidden="true">🧢</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -166,13 +172,32 @@
             <span class="disco-beam beam-3"></span>
           </div>
 
-          <!-- Animated Grooving Caricature -->
-          <div class="character-avatar-container anim-dance" id="s3-dance-character-wrapper">
+          <!-- Animated Grooving Caricature with Optional Real Photo Bobblehead -->
+          <div class="character-avatar-container anim-dance anim-thumka" id="s3-dance-character-wrapper">
             <img src="assets/character/dance.svg" alt="Animated caricature performing funny exaggerated dance moves" class="character-img" id="s3-character-img">
+            <!-- Comedy Real Photo Bobblehead Head Cutout -->
+            <div class="bobblehead-head" id="s3-bobblehead" hidden>
+              <div class="bobblehead-frame">
+                <img src="" alt="My Photo Head" id="s3-bobblehead-photo" class="bobblehead-photo">
+                <span class="bobblehead-party-hat" aria-hidden="true">👑</span>
+                <span class="bobblehead-shades" aria-hidden="true">🕶️</span>
+              </div>
+            </div>
           </div>
 
           <!-- Dance Reaction Badges (Animated on click) -->
           <div class="dance-cheers" id="dance-cheers-container" aria-live="polite"></div>
+        </div>
+
+        <!-- Interactive Dance Move Selector Bar -->
+        <div class="dance-moves-card">
+          <p class="dance-moves-title">🕺 Switch My Dance Move:</p>
+          <div class="dance-move-buttons" role="group" aria-label="Dance steps selection">
+            <button class="btn-dance-move active" data-move="thumka">💃 Bollywood Thumka</button>
+            <button class="btn-dance-move" data-move="moonwalk">👟 Moonwalk Slide</button>
+            <button class="btn-dance-move" data-move="disco">✨ Funky Disco</button>
+            <button class="btn-dance-move" data-move="crazy">🤪 Crazy Energy</button>
+          </div>
         </div>
 
         <!-- Interactive Dance Rating Bar -->
@@ -403,6 +428,12 @@
         <div class="letter-presenter-stage" id="letter-presenter-stage">
           <div class="character-avatar-container anim-letter" id="s6-character-wrapper">
             <img src="assets/character/holding-letter.svg" alt="Animated caricature holding a sealed love letter" class="character-img" id="s6-character-img">
+            <div class="bobblehead-head" id="s6-bobblehead" hidden>
+              <div class="bobblehead-frame">
+                <img src="" alt="My Photo Head" id="s6-bobblehead-photo" class="bobblehead-photo">
+                <span class="bobblehead-party-hat" aria-hidden="true">❤️</span>
+              </div>
+            </div>
           </div>
           <p class="envelope-prompt" id="s6-envelope-prompt">A special letter sealed with love just for you.</p>
           <button id="btn-open-letter" class="btn btn-primary btn-pulse" aria-label="Open My Letter">
